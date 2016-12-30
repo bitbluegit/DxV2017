@@ -1,0 +1,245 @@
+/*------------------------------------------------------------------------------
+                    Background Colors
+------------------------------------------------------------------------------*/
+.bg-white {
+    background-color: #fff;
+}
+.bg-red {
+    background-color: #cd5c5c;
+}
+.bg-grey {
+    background-color: #eee;
+}
+.bg-ash {
+    background-color: #607D8B;
+}
+/*------------------------------------------------------------------------------
+                    Text Colors
+------------------------------------------------------------------------------*/
+.txt-white {
+    color: #fff;
+}
+.txt-ash {
+    color: #616161;
+}
+/*------------------------------------------------------------------------------
+                    Texts Adjustments
+------------------------------------------------------------------------------*/
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+.small-caps {
+    font-variant: small-caps;
+}
+/*------------------------------------------------------------------------------
+                    Font Families
+------------------------------------------------------------------------------*/
+.monospace {
+    font-family: monospace;
+}
+/*------------------------------------------------------------------------------
+                    Font Sizes
+------------------------------------------------------------------------------*/
+.font10 {
+    font-size: 1rem;
+}
+.font12 {
+    font-size: 1.2rem;
+}
+.font14 {
+    font-size: 1.4rem;
+}
+.font16 {
+    font-size: 1.6rem;
+}
+.font18 {
+    font-size: 1.8rem;
+}
+.font20 {
+    font-size: 2rem;
+}
+/*------------------------------------------------------------------------------
+                    Font Weights
+------------------------------------------------------------------------------*/
+.font-weight100 {
+    font-weight: 100;
+}
+.font-weight400 {
+    font-weight: 400;
+}
+.font-weight700 {
+    font-weight: 700;
+}
+/*------------------------------------------------------------------------------
+                    Padding Utilities
+------------------------------------------------------------------------------*/
+.gutter-less {
+    padding-left: 0;
+    padding-right: 0;
+}
+.pad10 {
+    padding: 1rem;
+}
+.pad15 {
+    padding: 1.5rem;
+}
+.pad-left5 {
+    padding-left: 1.5rem;
+}
+.pad-left10 {
+    padding-left: 1.5rem;
+}
+.pad-left15 {
+    padding-left: 1.5rem;
+}
+.pad-left20 {
+    padding-left: 2rem;
+}
+.pad-right5 {
+    padding-right: 1.5rem;
+}
+.pad-right10 {
+    padding-right: 1.5rem;
+}
+.pad-right15 {
+    padding-right: 1.5rem;
+}
+.pad-right20 {
+    padding-right: 2rem;
+}
+.pad-bottom-zero {
+    padding-bottom: 0;
+}
+.pad-bottom10 {
+    padding-bottom: 1rem;
+}
+.pad-bottom15 {
+    padding-bottom: 1.5rem;
+}
+.pad-bottom20 {
+    padding-bottom: 2rem;
+}
+.pad-top5 {
+    padding-top: 0.5rem;
+}
+.pad-top10 {
+    padding-top: 1rem;
+}
+.pad-top20 {
+    padding-top: 2rem;
+}
+/*------------------------------------------------------------------------------
+                    Margin Utilities
+------------------------------------------------------------------------------*/
+.margin-bottom-zero {
+    margin-bottom: 0;
+}
+.margin-bottom20 {
+    margin-bottom: 2rem;
+}
+.margin-bottom30 {
+    margin-bottom: 3rem;
+}
+.margin-right20 {
+    margin-right: 2rem;
+}
+/*------------------------------------------------------------------------------
+                    Element Display Types
+------------------------------------------------------------------------------*/
+.display-block {
+    display: block;
+}
+.display-inline-block {
+    display: inline-block;
+}
+
+/*------------------------------------------------------------------------------
+                    Icon Types
+------------------------------------------------------------------------------*/
+.round-icon,
+.round-icon-large{
+    display: inline-block;
+    border: 1px solid;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    text-align: center;
+}
+.round-icon-large {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+}
+/*------------------------------------------------------------------------------
+                    Overflow
+------------------------------------------------------------------------------*/
+.overflow-x {
+    overflow-x: auto;
+}
+.overflow-y {
+    overflow-y: auto;
+}
+/*------------------------------------------------------------------------------
+                    Box Shadows
+------------------------------------------------------------------------------*/
+.box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*------------------------------------------------------------------------------
+                    Border Utilities
+------------------------------------------------------------------------------*/
+.border-radius-2px {
+    border-radius: 2px;
+}
+.border-radius-3px {
+    border-radius: 3px;
+}
+.border-full {
+    border: 1px solid #bbb;
+}
+.border-bottom {
+    border-bottom: 1px solid;
+}
+.border-color-red {
+    border-color: #cd5c5c;
+}
+/*------------------------------------------------------------------------------
+                    Badge Utilities
+------------------------------------------------------------------------------*/
+.badge-blue, .badge-yellow, .badge-orange, .badge-green, .badge-pink {
+    color: #fff;
+    font-size: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 2px;
+}
+.badge-blue {
+    background-color: #03A9F4;
+}
+.badge-yellow {
+    background-color: #ffc107;
+}
+.badge-orange {
+    background-color: #ffc107;
+}
+.badge-green {
+    background-color: #4CAF50;
+}
+.badge-pink {
+    background-color: #E91E63;
+}
+/*------------------------------------------------------------------------------
+                    Hover Utilities
+------------------------------------------------------------------------------*/
+.bg-hover-green:hover {
+    background-color: #8BC34A; 
+}
+.txt-hover-white:hover {
+    color: #fff;
+}

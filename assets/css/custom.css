@@ -1,0 +1,44 @@
+
+/****************************************
+********  Left Pane  Settings ***********
+****************************************/
+
+.left-panel { overflow-y: auto; }
+.left-panel h4 { color: #f3b5b5; border-bottom: 1px solid #f3b5b5; }
+
+.left-panel nav a { color: #fff; text-decoration: none; display: block; text-transform: uppercase; font-size: 12px; 
+    padding: 1rem 0; padding-left: 2rem; } 
+    
+    .left-panel nav a.active { background-color: #e88f8f; border-radius: 2px; }
+    .left-panel nav a:hover { cursor: pointer; color: #ddd; }
+    .left-panel nav a i { margin-right: 1.5rem; font-size: 2.2rem; vertical-align: sub; }
+
+
+
+/****************************************
+********  Right Pane Settings ***********
+****************************************/
+
+.right-panel { min-height: 100vh; }
+.right-panel h4.page-header { border-bottom: 1px solid #ddd; background-color: #fff; }
+.height85 { height: 85px; }
+.full-width th,td { font-size: 12px; }
+.dummyimg { margin-left: 100px; }
+
+
+/*Buttons*/
+.right-panel button[type="submit"].btn:hover { font-weight: 900;}
+
+
+
+
+/****************************************
+*******  Media Query Settings ***********
+****************************************/
+
+@media screen and (min-width: 769px) {
+
+    .left-panel { position: fixed; width: 20%; height: 100vh; }
+    .right-panel { width: 80%; margin-left: 20%; } 
+
+}
