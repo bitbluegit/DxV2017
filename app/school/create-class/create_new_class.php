@@ -36,6 +36,8 @@
           <option value="first">First</option>
           <option value="second">Second</option>
           <option value="third">Third</option>
+                    <option value="second">second</option>
+
         </select>
       </div>
 

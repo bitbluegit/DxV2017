@@ -15,10 +15,7 @@ elementById('createClassSubmit').addEventListener('click',function(){
 	params.mdm = mdm;
 	params.std = std;
 	params.div = div;
-	
 	createClassObj.params = params;
-
-	console.log(createClassObj);
 
 	AjaxPost(createClassObj);
 
