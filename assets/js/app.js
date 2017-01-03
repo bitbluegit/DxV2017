@@ -64,7 +64,6 @@ return {
 
 	// ajax call 
 	function AjaxGet(getObj){
-		alert("hiii");
 		var xhr = new XMLHttpRequest() ,
 		// params = postObj.params ,
 		url = getObj.url , 
@@ -86,14 +85,37 @@ return {
 		xhr.send();
 	}
 
+
+// Ajax Post Method 
+// function AjaxPost(url,paramsObj,callBackFunction,responseType ,async){
+
+// 	var params = "data=" + JSON.stringify(paramsObj) ,  
+// 	async = async || true ,
+// 	resType = responseType || 'json' ;
+
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.open("POST", url, async);
+// 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+// 	xhr.onreadystatechange = function () {
+// 		if(xhr.readyState == 4 && xhr.status == 200) {
+// 			var resData = ( resType == 'json' ? JSON.parse(xhr.responseText) : xhr.responseText );
+//   			callBackFunction(resData); // Call Back 
+//   		}
+//   	};
+
+//   	xhr.send(params);
+
+//   }
+
+
+  ///////old ajax mathod
+
 	function AjaxPost(postObj){
-		
-		var xhr = new XMLHttpRequest() ,
+		var xhr = new XMLHttpRequest(),
 		params = "data=" + JSON.stringify(postObj.params); 
 		url = postObj.url , 
 		async = postObj.async || true ,
 		callbackfn = postObj.fn;
-
 		xhr.open("POST", url, async);
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		// xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');

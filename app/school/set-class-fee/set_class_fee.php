@@ -6,55 +6,59 @@
                         <i class="ion-android-settings margin-right20"></i>
                         Fee Details
                     </h5>
-                    <form class="row">
+                    <form class="row" method="post" action="" onsubmit="return false">
                         <div class="col m12 l3">
                             <label for="medium" class="font-weight100 small-caps full-width">Medium</label>
-                                <select id="medium" class="full-width" title="Select your Medium eg. English">
-                                    <option>Select One</option>
-                                    <option>English</option>
+                                <select name="medium" id="medium" class="full-width" title="Select your Medium eg. English">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="english">English</option>
                                 </select>
 
                             <label for="feeamount" class="font-weight100 small-caps full-width">Fee Amount</label>
-                                  <input type="number" id="feeamount" class="full-width" title="Enter Fee amount.">
+                                  <input type="number" name="feeamount" id="feeamount" class="full-width"   title="Enter Fee amount.">
                         </div>
                         
                         <div class="col m12 l3">
                             <label for="standard" class="font-weight100 small-caps full-width">Standard</label>
-                               <select id="standard" class="full-width" title="Select your Standard.">
-                                    <option>Select One</option>
-                                    <option>First</option>
+                               <select name="standard" id="standard" class="full-width" title="Select your Standard.">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="first">First</option>
                                  </select>
                         
                             <label for="latefee"class="font-weight100 small-caps full-width">Late Fee Amount</label>
-                                <input type="number" id="latefee" class="full-width" title="Enter Late Fee.">
+                                <input type="number" name="latefee" id="latefee" class="full-width" title="Enter Late Fee.">
                         </div>
                         
                         <div class="col m12 l3">
                             <label for="feefrequency" class="font-weight100 small-caps full-width">Fee Frequency</label>
-                            <select id="feefrequency" class="full-width" title="Select Fee Frequency">
-                                <option>Select One</option>
+                            <select name="feefrequency" id="feefrequency" class="full-width" title="Select Fee Frequency">
+                                <option value="" disabled selected>Select One</option>
+                                <option value="per-month">Per Month</option>
                             </select>
                         
                             <label for="feeformat1" class="font-weight100 small-caps full-width">Fee Format 1</label>
                             <select id="feeformat1" class="full-width" title="Select your Fee Format 1.">
                                 <option>Select One</option>
+                                <option value="compulsory">Compulsory</option>
                             </select>
                         </div>
                         
                         <div class="col m12 l3">
                             <label  for="feename" class="font-weight100 small-caps full-width">Fee Name</label>
-                            <input type="number" id="feename" class="full-width" title="Enter Fee Name.">
+                            <input type="text" id="feename" class="full-width" title="Enter Fee Name.">
                         
                             <label for="feeformat2" class="font-weight100 small-caps full-width">Fee Format 2</label>
                             <select id="feeformat2" class="full-width" title="Select you Fee Format 2.">
-                                <option>Select One</option>
+                                <option value="" disabled selected>Select One</option>
+                                <option value="payable">Payable</option>
                             </select>
                         </div>
                         
                         <div class="col m12 pad-top10 txt-left">
-                            <button type="submit" class="btn bg-grey txt-ash full-width">
+                            <button type="submit" class="btn bg-grey txt-ash full-width"
+                             id="setClassFeeSubmit">
                                 <i class="ion-android-send"></i>
-                                Filter
+                                Submit
                             </button>
                         </div>
                         
@@ -165,3 +169,8 @@
                 
             </div>
             <!-- /Container -->
+
+
+
+<script src="../../../assets/js/app.js"></script>
+<script src="set_class_fee.js"></script>

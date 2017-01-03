@@ -3,6 +3,7 @@ function createClassResponseHandler(res){
 }
 
 elementById('createClassSubmit').addEventListener('click',function(){
+	
 
 	var createClassObj = {} , params = {} ;
 	createClassObj.url = 'createClassCtrl.php';
@@ -15,6 +16,7 @@ elementById('createClassSubmit').addEventListener('click',function(){
 	params.mdm = mdm;
 	params.std = std;
 	params.div = div;
+	
 	createClassObj.params = params;
 
 	AjaxPost(createClassObj);

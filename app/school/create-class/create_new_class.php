@@ -14,7 +14,7 @@
   </h5> 
   
   <!-- Create Class Form -->
-  <form method="post" action="createClassCtrl.php" id="create-class-form" onsubmit="return false">
+  <form method="post" action="" id="" onsubmit="return false">
 
     <!-- ROW - 1  -->
     <div class="row">
@@ -36,8 +36,10 @@
           <option value="first">First</option>
           <option value="second">Second</option>
           <option value="third">Third</option>
-                    <option value="second">second</option>
-
+          <option value="fourth">Fourth</option>
+          <option value="fifth">Fifth</option>
+          <option value="sixth">Sixth</option>
+          <option value="seventh">Seventh</option>
         </select>
       </div>
 
