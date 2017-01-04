@@ -9,46 +9,46 @@
                     <form class="row" method="post" action="" onsubmit="return false">
                         <div class="col m12 l3">
                             <label for="medium" class="font-weight100 small-caps full-width">Medium</label>
-                                <select name="medium" id="medium" class="full-width" title="Select your Medium eg. English">
+                                <select name="medium" id="medium" class="full-width" title="Select your Medium eg. English" required>
                                     <option value="" disabled selected>Select One</option>
                                     <option value="english">English</option>
                                 </select>
 
                             <label for="feeamount" class="font-weight100 small-caps full-width">Fee Amount</label>
-                                  <input type="number" name="feeamount" id="feeamount" class="full-width"   title="Enter Fee amount.">
+                                  <input type="number" name="feeamount" id="feeamount" class="full-width"   title="Enter Fee amount." required>
                         </div>
                         
                         <div class="col m12 l3">
                             <label for="standard" class="font-weight100 small-caps full-width">Standard</label>
-                               <select name="standard" id="standard" class="full-width" title="Select your Standard.">
+                               <select name="standard" id="standard" class="full-width" title="Select your Standard." required>
                                     <option value="" disabled selected>Select One</option>
                                     <option value="first">First</option>
                                  </select>
                         
                             <label for="latefee"class="font-weight100 small-caps full-width">Late Fee Amount</label>
-                                <input type="number" name="latefee" id="latefee" class="full-width" title="Enter Late Fee.">
+                                <input type="number" name="latefee" id="latefee" class="full-width" title="Enter Late Fee." required>
                         </div>
                         
                         <div class="col m12 l3">
-                            <label for="feefrequency" class="font-weight100 small-caps full-width">Fee Frequency</label>
-                            <select name="feefrequency" id="feefrequency" class="full-width" title="Select Fee Frequency">
+                            <label for="feefreq" class="font-weight100 small-caps full-width">Fee Frequency</label>
+                            <select name="feefreq" id="feefreq" class="full-width" title="Select Fee Frequency" required>
                                 <option value="" disabled selected>Select One</option>
                                 <option value="per-month">Per Month</option>
                             </select>
                         
                             <label for="feeformat1" class="font-weight100 small-caps full-width">Fee Format 1</label>
-                            <select id="feeformat1" class="full-width" title="Select your Fee Format 1.">
-                                <option>Select One</option>
+                            <select id="feeformat1" class="full-width" title="Select your Fee Format 1." required>
+                                <option value="" disabled selected>Select One</option>
                                 <option value="compulsory">Compulsory</option>
                             </select>
                         </div>
                         
                         <div class="col m12 l3">
                             <label  for="feename" class="font-weight100 small-caps full-width">Fee Name</label>
-                            <input type="text" id="feename" class="full-width" title="Enter Fee Name.">
+                            <input type="text" id="feename" class="full-width" title="Enter Fee Name." required>
                         
                             <label for="feeformat2" class="font-weight100 small-caps full-width">Fee Format 2</label>
-                            <select id="feeformat2" class="full-width" title="Select you Fee Format 2.">
+                            <select id="feeformat2" class="full-width" title="Select you Fee Format 2." required>
                                 <option value="" disabled selected>Select One</option>
                                 <option value="payable">Payable</option>
                             </select>

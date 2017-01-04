@@ -7,10 +7,14 @@
 					<i class="ion-person-add"></i>
 					Create New Class
 				</a>
-				<a>
-					<i class="ion-arrow-graph-up-right"></i>
+				<a href="../set-class-fee/set_class_fee.php">
+					<i class="ion-social-usd-outline"></i>
 					Set Class Fee
 				</a>
+
+				<a href="../create-bus-fee/create_bus_fee.php">
+				<i class="ion-android-bus"></i>
+				Create Bus Fee
 				<a>
 					<i class="ion-arrow-graph-up-right"></i>
 					Update Student Info

@@ -6,6 +6,10 @@
 		return document.getElementById(id);
 	}
 
+	function elementByIdValue(id){
+		return document.getElementById(id);
+	}
+
 	function elementByClass(elemntclass){
 		return document.querySelectorAll('.'+elemntclass);
 	}
@@ -87,48 +91,48 @@ return {
 
 
 // Ajax Post Method 
-// function AjaxPost(url,paramsObj,callBackFunction,responseType ,async){
+function AjaxPost(url,paramsObj,callBackFunction,responseType ,async){
 
-// 	var params = "data=" + JSON.stringify(paramsObj) ,  
-// 	async = async || true ,
-// 	resType = responseType || 'json' ;
+	var params = "data=" + JSON.stringify(paramsObj) ,  
+	async = async || true ,
+	resType = responseType || 'json' ;
 
-// 	var xhr = new XMLHttpRequest();
-// 	xhr.open("POST", url, async);
-// 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-// 	xhr.onreadystatechange = function () {
-// 		if(xhr.readyState == 4 && xhr.status == 200) {
-// 			var resData = ( resType == 'json' ? JSON.parse(xhr.responseText) : xhr.responseText );
-//   			callBackFunction(resData); // Call Back 
-//   		}
-//   	};
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, async);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function () {
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			var resData = ( resType == 'json' ? JSON.parse(xhr.responseText) : xhr.responseText );
+  			callBackFunction(resData); // Call Back 
+  		}
+  	};
 
-//   	xhr.send(params);
+  	xhr.send(params);
 
-//   }
+  }
 
 
   ///////old ajax mathod
 
-	function AjaxPost(postObj){
-		var xhr = new XMLHttpRequest(),
-		params = "data=" + JSON.stringify(postObj.params); 
-		url = postObj.url , 
-		async = postObj.async || true ,
-		callbackfn = postObj.fn;
-		xhr.open("POST", url, async);
-		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		// xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-		xhr.onreadystatechange = function () {
-			if(xhr.readyState == 4 && xhr.status == 200) {
-				var result = xhr.responseText;
-				// console.log('Result: ' + result);
-				// var json = JSON.parse(result);
-				callbackfn(result);
-			}
-		};
-		xhr.send(params);
-	}
+	// function AjaxPost(postObj){
+	// 	var xhr = new XMLHttpRequest(),
+	// 	params = "data=" + JSON.stringify(postObj.params); 
+	// 	url = postObj.url , 
+	// 	async = postObj.async || true ,
+	// 	callbackfn = postObj.fn;
+	// 	xhr.open("POST", url, async);
+	// 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	// 	// xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	// 	xhr.onreadystatechange = function () {
+	// 		if(xhr.readyState == 4 && xhr.status == 200) {
+	// 			var result = xhr.responseText;
+	// 			// console.log('Result: ' + result);
+	// 			// var json = JSON.parse(result);
+	// 			callbackfn(result);
+	// 		}
+	// 	};
+	// 	xhr.send(params);
+	// }
 
 
 

@@ -1,7 +1,5 @@
 <?php require_once '../../includes/header.php'; ?>
 
-
-
 <!-- ****************************
 **** Create User Main Block ****
 ***************************** -->
@@ -32,6 +30,7 @@
 			<label for="usertype" class="font-weight100 small-caps full-width">User Type</label>
 			<select id="usertype" class="full-width" title="Select User type." required>
 				<option value="" disabled selected>Select One</option>
+				<option value="admin">Admin</option>
 				<option value="sch_user">School-User</option>
 				<option value="clg_user">College-User</option>
 			</select>
@@ -114,25 +113,3 @@
 
 <script src="../../../assets/js/app.js"></script>
 <script src="create_user.js"></script>
-<script type="text/javascript">
-
-
-	
-  // 	var params = {} ,
-  // 	creatUserResHandler = function(res) {
-  // 		document.getElementById('Eid').innerHTML = res;
-  // 	}
-
-  // 	// param add 
-  // 	params.pwd = pwd ;
-  // 	params.uname = uname ;
-  // 	params.usrtype = usrtype;
-  // 	params.fullname = fullname;
-  // 	params.contactno = contactno;
-
-  // 	// conditonal check if true 
-  // 	AjaxPost('createUserCtrl.php',params,creatUserResHandler,'txt');
-  // 	// else intimate user to fill the details 
-  // }
-
-</script>

@@ -1,25 +1,20 @@
+
+
 function createClassResponseHandler(res){
 	console.log(res);
 }
 
 elementById('createClassSubmit').addEventListener('click',function(){
+	var params = {} ,
+	fn = function(){
+		 // alert('hello');
+	};
 	
-
-	var createClassObj = {} , params = {} ;
-	createClassObj.url = 'createClassCtrl.php';
-	createClassObj.fn = createClassResponseHandler;
-
-	var mdm = elementById('medium').value, 
-	std = elementById('standard').value,
-	div = elementById('division').value; 
-
-	params.mdm = mdm;
-	params.std = std;
-	params.div = div;
+	params.mdm = elementById('medium').value;
+	params.std = elementById('standard').value;
+	params.div = elementById('division').value;
 	
-	createClassObj.params = params;
-
-	AjaxPost(createClassObj);
+	AjaxPost('createClassCtrl.php',params,fn,'txt');
 
 });
 

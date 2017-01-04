@@ -14,7 +14,7 @@
   </h5> 
   
   <!-- Create Class Form -->
-  <form method="post" action="" id="" onsubmit="return false">
+  <form method="post" action="" id="createClass" onsubmit="return false">
 
     <!-- ROW - 1  -->
     <div class="row">
@@ -22,7 +22,7 @@
       <!-- Medium -->
       <div class="col m12 l4">
         <label for="medium" class="font-weight100 small-caps full-width">Medium</label>
-        <select id="medium" name="medium" class="full-width" title="Select your Medium." required>
+        <select id="medium" name="medium" class="full-width" title="Select your Medium." required="required">
           <option value="" disabled selected>Select One</option>
           <option value="english">English</option>
         </select>

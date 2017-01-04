@@ -4,32 +4,23 @@ function setClassFeeResponseHandler(res){
 
 elementById('setClassFeeSubmit').addEventListener('click',function(){
 	
-	var setClassfeeObj = {} , params = {} ;
-	setClassfeeObj.url = 'setClassFeeCtrl.php';
-	setClassfeeObj.fn = setClassFeeResponseHandler;
+	var params = {} ,
+	fn = function(){
+		// alert('hello');
+	};
+	
+	params.mdm = elementById('medium').value;
+	params.std = elementById('standard').value;
+	params.feefreq = elementById('feefreq').value;
+	params.feename =elementById('feename').value;
+	params.feeamount = elementById('feeamount').value;
+	params.latefee = elementById('latefee').value;
+	params.feeformat1 = elementById('feeformat1').value;
+	params.feeformat2 = elementById('feeformat2').value;
 
+	// window.alert(params.mdm);
+	// window.alert(params.std);
 
-	var mdm = elementById('medium').value,
-	std = elementById('standard').value,
-	feefreq = elementById('feefrequency').value,
-	feename =elementById('feename').value,
-	feeamount = elementById('feeamount').value,
-	latefee = elementById('latefee').value;
-	feeformat1 = elementById('feeformat1').value;
-	feeformat2 = elementById('feeformat2').value;
-
-	params.mdm = mdm;
-	params.std = std;
-	params.feefreq = feefreq;
-	params.feename = feename;
-	params.feeamount = feeamount;
-	params.latefee = latefee;
-	params.feeformat1 = feeformat1;
-	params.feeformat2 = feeformat2;
-
-
-	setClassfeeObj.params = params;
-
-	AjaxPost(setClassfeeObj);
+	AjaxPost('setClassFeeCtrl.php',params,fn,'txt');
 
 });

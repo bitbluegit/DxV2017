@@ -3,25 +3,18 @@ function createUserResponseHandler(res){
 }
 
 elementById('createNewUserSubmit').addEventListener('click',function(){
+
+	var params = {} ,
+	fn = function(){
+		 // alert('hello');
+	};
 	
-	var createUserObj = {} , params = {} ;
-	createUserObj.url = 'createUserCtrl.php';
-	createUserObj.fn = createUserResponseHandler;
-
-	var uname = elementById('username').value,
-	pswd = elementById('password').value,
-	usrtype =elementById('usertype').value,
-	fullname = elementById('fullname').value,
-	contactno = elementById('contactno').value;
-
-	params.uname = uname;
-	params.pswd = pswd;
-	params.usrtype = usrtype;
-	params.fullname = fullname;
-	params.contactno = contactno;
-
-	createUserObj.params = params;
-
-	AjaxPost(createUserObj);
+	params.uname = elementById('username').value;
+	params.pswd = elementById('password').value;
+	params.usrtype = elementById('usertype').value;
+	params.fullname = elementById('fullname').value;
+	params.contactno = elementById('contactno').value;
+	
+	AjaxPost('createUserCtrl.php',params,fn,'txt');
 
 });
