@@ -18,3 +18,6 @@ elementById('createNewUserSubmit').addEventListener('click',function(){
 	AjaxPost('createUserCtrl.php',params,fn,'txt');
 
 });
+
+
+

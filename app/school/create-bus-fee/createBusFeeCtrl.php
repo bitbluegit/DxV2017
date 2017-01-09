@@ -31,10 +31,9 @@ class insertBusFeeCtrl{
 		}else{
 
 			$sql  = " INSERT INTO `bus_fee` (`area_code`, `unique_id`, `area_name`,`bus_fee_amount`,
-			`fee_freq`,`bus_lfee_amount`,`late_fee_freq`,`is_active`,`Created_at`)
+			`fee_freq`,`bus_lfee_amount`,`late_fee_freq`,`is_active`)
 			VALUES ('','{$user_id}','{$formData['areaname']}','{$formData['feeamount']}',
-			'{$formData['feefreq']}','{$formData['latefee']}','{$formData['latefeefreq']}','1',
-			' CURDATE()  ') " ;
+			'{$formData['feefreq']}','{$formData['latefee']}','{$formData['latefeefreq']}','1') " ;
 
 			$affectedRowCount = DB::execute($sql);
 			if($affectedRowCount !== null ){

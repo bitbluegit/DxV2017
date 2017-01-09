@@ -62,75 +62,31 @@
                  <!-- ENquiry details Data -->
                 <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
                     <i class="ion-ios-paper-outline margin-right20"></i>
-                    Created Bonafide
+                    Created Bus Fee
                 </h5>
                 <div class="bg-white overflow-x box-shadow margin-bottom30">
                     <table class="full-width margin-bottom-zero">
-                        <tbody>
+                        <thead>                            
                             <tr class="txt-ash">     
-                                <th>Area</th>
-                                <th>Amount</th>
-                                <th>Late Fee</th>
-                                <th>Fee Frequency</th>
-                                <th>Late Fee Frequency</th>
-                                <th>Created</t>                                
+                               <th>Area</th> <th>Amount</th> <th>Late Fee</th> <th>Fee Frequency</th> <th>Late Fee Frequency</th>
+                                <th>Created</th>                                
                             </tr>
-                            <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                            <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                             <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                           <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                           <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                         <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
-                            <tr>                               
-                                <td>Nallasopara</td>
-                                <td>500</td>
-                                <td>20</td>
-                                <td>Monthly</td>
-                                <td>per day</td>
-                                <td>12/12/2016</td>                                
-                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+
+                            //bus fee detail
+                            $sql = "select bus_fee.area_name,bus_fee.bus_fee_amount,bus_fee.bus_lfee_amount,bus_fee.fee_freq,bus_fee.late_fee_freq, bus_fee.created_at,bus_fee.unique_id from bus_fee";
+
+                               $busFeeArr = DB::allRow($sql);
+                            foreach ($busFeeArr as  $fee) {
+                                $unique_id = array_pop($fee);
+                                    echo sprintf("<tr><td>%s</td></tr>", implode('</td><td>', $fee));
+                            }
+
+                              ?>       
+
+                            
                         </tbody>
                     </table>
                 </div>

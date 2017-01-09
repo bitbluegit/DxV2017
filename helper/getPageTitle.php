@@ -107,7 +107,18 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Update Student Info'
 		),
-	
+	'bonafide_form' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Create Bonafide'
+		),
+	'lc_form' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Create Lc'
+		),
+	'add_award' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Award'
+		),
 	);
 
 $pageTitleIcon = $pageTitleArr[GetPageTitle::getTitle($_SERVER['REQUEST_URI'])];

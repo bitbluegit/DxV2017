@@ -23,11 +23,11 @@
 					<i class="ion-arrow-graph-up-right"></i>
 					Search Student
 				</a>
-				<a>
+				<a  href="../enquiry/enquiry.php">
 					<i class="ion-arrow-graph-up-right"></i>
 					Enquiry
 				</a>
-				<a>
+				<a href="../transaction/transaction.php">
 					<i class="ion-arrow-graph-up-right"></i>
 					Transaction
 				</a>
@@ -39,9 +39,13 @@
 					<i class="ion-university"></i>
 					Certificates
 				</a>
-				<a>
+				<a href="../bonafide/bonafide.php">
 					<i class="ion-ios-crop-strong"></i>
-					Profiles
+					Bonafide
+				</a>
+				<a href="../lc-reports/lcreport.php">
+					<i class="ion-ios-crop-strong"></i>
+					LC Reports
 				</a>
 				<a>
 					<i class="ion-android-chat"></i>
@@ -51,11 +55,11 @@
 					<i class="ion-ios-clock-outline"></i>
 					Events
 				</a>
-				<a>
+				<a href="../filter-bus-fee/filter_bus_fee.php">
 					<i class="ion-arrow-graph-up-right"></i>
-					Transactions
+					Filter Bus Fee
 				</a>
-				<a>
+				<a href="../edit-profile/edit_profile.php">
 					<i class="ion-ios-crop-strong"></i>
 					Profiles
 				</a>

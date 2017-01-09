@@ -30,9 +30,13 @@
 			<label for="usertype" class="font-weight100 small-caps full-width">User Type</label>
 			<select id="usertype" class="full-width" title="Select User type." required>
 				<option value="" disabled selected>Select One</option>
-				<option value="admin">Admin</option>
-				<option value="sch_user">School-User</option>
-				<option value="clg_user">College-User</option>
+				<option value="Admin">Admin</option>
+				<option value="School">School User</option>
+				<option value="College">College User</option>
+				<option value="teacher">School Teacher</option>
+				<option value="clgTeacher">College Teacher</option>
+				<option value="common">School Common</option>
+				<option value="clgCommon">College Common</option>
 			</select>
 		</div>
 
@@ -71,45 +75,33 @@
 </h5>
 <section class="bg-white overflow-x box-shadow margin-bottom30">
 	<table class="full-width margin-bottom-zero user-details">
+		<thead>
+			<tr class="txt-ash"> <th>Name.</th> <th>User name</th> <th>Type</th> <th>Contact No.</th> <th>Update</th> </tr>
+		</thead>
 		<tbody>
-			<tr class="txt-ash">     
-				<th>Name.</th>
-				<th>User name</th>
-				<th>Type</th>
-				<th>Contact No.</th>
-				<th>Update</th>
+			<?php 
+			// User Details 
+			$sql = " SELECT AD.`Name` , AD.`uname` , AD.`type` ,AD.`p_num`,  AD.`unique_id`
+			FROM admin_sch AD
+			ORDER BY FIELD(AD.`type`,'Admin','School','College','teacher','clgTeacher','common','clgCommon')";
+			$userDataArr = DB::allRow($sql);
+			foreach ($userDataArr as $user){
+				$user_id = array_pop($user);
+				$btn = "<button onclick='updateUser({$user_id})'> <i class='ion-edit'></i> </button>";
 
-			</tr>
-			<tr>                               
-				<td>hr</td>
-				<td>School</td>
-				<td>school-user</td>
-				<td>7896541235</td>
-				<td>
-					<i class="ion-edit"></i>
-				</td>
-
-			</tr>
-			<tr>
-				<td>hr</td>
-				<td>School</td>
-				<td>school-user</td>
-				<td>7896541235</td>
-				<td>
-					<i class="ion-edit"></i>
-				</td>
-			</tr>
+				echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$user),$btn);
+			}
+			?>
 		</tbody>
 	</table>
 </section>
-
 
 
 </div>
 <!-- /Container -->
 
 
-
-
 <script src="../../../assets/js/app.js"></script>
 <script src="create_user.js"></script>
+
+

@@ -72,101 +72,30 @@
                 </h5>
                 <div class="bg-white overflow-x box-shadow margin-bottom30">
                     <table class="full-width margin-bottom-zero">
+                        <thead>
+                            <tr class="txt-ash">
+                                <th>Medium</th> <th>Standard</th> <th>Frequency</th> <th>Name</th> <th>Amount</th>
+                                <th>Late Fee</th> <th>Fee Format 1</th> <th>Fee Format 2</th> <th>Consession</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr class="txt-ash">     
-                                <th>Medium</th>
-                                <th>Standard</th>
-                                <th>Frequency</th>
-                                <th>Name</th>
-                                <th>Amount</th>
-                                <th>Late Fee</th>
-                                <th>Fee Format 1</th>
-                                <th>Fee Format 2</th>
-                                <th>Consession</th> 
-                            </tr>
-                            <tr>                               
-                                <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                                <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                                <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                               <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                                <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                               <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
-                            <tr>
-                               <td>Eng</td>
-                                <td>1<sup>st</sup></td>
-                                <td>One Time</td>
-                                <td>Uniform</td>
-                                <td>500</td>
-                                <td>50</td>
-                                <td>Compulsory</td>
-                                <td>Payable</td>
-                                <td>50 @ 2</td>
-                            </tr>
+                            <?php
+                            //created fee details
+                            $sql = "select sch_cls_fee.medium , sch_cls_fee.std, sch_cls_fee.one_time, sch_cls_fee.fee_type, sch_cls_fee.fee,sch_cls_fee.lfee,sch_cls_fee.cumpulsory, sch_cls_fee.status,
+                                sch_cls_fee.unique_id from Sch_cls_fee";
+
+                            $feeDataArr = DB::allRow($sql);
+                            foreach ($feeDataArr as  $fee) {
+                                $feeId = array_pop($fee);
+                                echo sprintf("<tr><td>%s</td></tr>",implode("</td><td>",$fee));
+                            }
+
+                            ?>
                         </tbody>
                     </table>
                 </div>
                     
                 </div>
-                
             </div>
             <!-- /Container -->
 
