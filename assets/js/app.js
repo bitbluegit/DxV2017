@@ -7,7 +7,7 @@
 	}
 
 	function elementByIdValue(id){
-		return document.getElementById(id);
+		return document.getElementById(id).value.trim();
 	}
 
 	function elementByClass(elemntclass){
@@ -24,6 +24,7 @@
 	}
 
 	window.elementById=elementById;
+	window.elementByIdValue=elementByIdValue;
 	window.elementByClass=elementByClass;
 	// return {
 	// 	elementById:elementById,

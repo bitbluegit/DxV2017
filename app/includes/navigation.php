@@ -35,9 +35,9 @@
 					<i class="ion-arrow-graph-up-right"></i>
 					Create New User
 				</a>
-				<a>
+				<a href="../award/add_award.php">
 					<i class="ion-university"></i>
-					Certificates
+					Awards
 				</a>
 				<a href="../bonafide/bonafide.php">
 					<i class="ion-ios-crop-strong"></i>

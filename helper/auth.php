@@ -5,7 +5,7 @@ require 'db.php';
 require 'session.php';
 require '../config/routes.php';
 
-
+// echo "hiiiiiiiii";
 
 class Auth {
 

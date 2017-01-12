@@ -6,7 +6,7 @@ $reqData =  json_decode($_POST['data'],true);
 
 
 $sql = " 
-SELECT US.Gr_num, SC.`name`, US.Std, SC.`f_name`, SC.`m_name`, SC.`DOB`, SC.`birth_place`, SC.`religion` 
+SELECT US.`Gr_num`,  SC.`name`,US.`Medium`, US.`Std`,US.`Section` 
 FROM user_sch US 
 INNER JOIN sch_details SC ON US.Gr_num = SC.Gr_num 
 WHERE US.Gr_num = '{$reqData['enroll']}' 
@@ -21,6 +21,8 @@ if($data){
 }
 
 
+// current date
+$date = date('Y-d-m');
 
 
 ?>
@@ -29,11 +31,11 @@ if($data){
 <!-- Title -->
 <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
 	<i class="ion-android-settings margin-right20"></i>
-	Create Bonafide 
+	Add Award 
 </h5> 
 
 <!-- Create Class Form -->
-<form method="post" action="insertBonafideCtrl.php" id="filter-data" onsubmit="" >
+<form method="post" action="addAwardCtrl.php" id="filter-data"  >
 
 	<!-- ROW - 1  -->
 	<div class="row">
@@ -44,43 +46,41 @@ if($data){
 		</div>
 
 		<div class="col m12 l4">
+			<label for="date" class="font-weight100 small-caps full-width">Date </label>
+			<input class="full-width" type="date" id="date" name="date"  value="<?php echo $date; ?>"   required>
+		</div>
+
+		<div class="col m12 l4">
 			<label for="Stu_name" class="font-weight100 small-caps full-width">Student Name</label>
 			<input class="full-width" type="text" id="Stu_name" name="Stu_name"    value="<?=$name?>"   required>
 		</div>
+		
 
 		<div class="col m12 l4">
-			<label for="fname" class="font-weight100 small-caps full-width">Father's Name</label>
-			<input class="full-width" type="text" id="fname" name="fname"    value="<?= $f_name ?>"   required>
+			<label for="medium" class="font-weight100 small-caps full-width">Medium</label>
+			<input class="full-width" type="text" id="medium" name="medium"    value="<?= $Medium ?>"   required>
 		</div>
 
-		<div class="col m12 l4">
-			<label for="mname" class="font-weight100 small-caps full-width">Mother's Name</label>
-			<input class="full-width" type="text" id="mname" name="mname"    value="<?= $m_name ?>"   required>
-		</div>
-
+		
 		<div class="col m12 l4">
 			<label for="standard" class="font-weight100 small-caps full-width">Standard</label>
 			<input class="full-width" type="text" id="standard" name="standard"    value="<?= $Std ?>"   required>
 		</div>
 
 		<div class="col m12 l4">
-			<label for="dob" class="font-weight100 small-caps full-width">Date Of Birth</label>
-			<input class="full-width" type="date" id="dob" name="dob"  value="<?= $DOB ?>"   required>
+			<label for="section" class="font-weight100 small-caps full-width">Section</label>
+			<input class="full-width" type="text" id="section" name="section"    value="<?= $Section ?>"   required>
 		</div>
 
 		<div class="col m12 l4">
-			<label for="birth-place" class="font-weight100 small-caps full-width">Place Of Birth</label>
-			<input class="full-width" type="text" id="birth-place" name="birth-place" value="<?= $birth_place ?>"   required>
+			<label for="competition" class="font-weight100 small-caps full-width">Name Of competition</label>
+			<input class="full-width" type="text" id="competition" name="competition" required>
 		</div>
 
-		<div class="col m12 l4">
-			<label for="religion" class="font-weight100 small-caps full-width">Religion</label>
-			<input class="full-width" type="text" id="religion" name="religion" value="<?= $religion ?>"   required>
-		</div>
 
 		<div class="col m12 l4">
-			<label for="purpose" class="font-weight100 small-caps full-width">Purpose</label>
-			<input class="full-width" type="text" id="purpose" name="purpose" required>
+			<label for="remark" class="font-weight100 small-caps full-width">Remark</label>
+			<input class="full-width" type="text" id="remark" name="remark" required>
 		</div>
 
 		<!-- institute -->
@@ -96,7 +96,7 @@ if($data){
 
 		<!-- Submit Button -->
 		<div class="col m12 pad-top10 txt-left">
-			<button type="submit" class="btn bg-grey txt-ash full-width" id="createBonafideSubmit" >
+			<button type="submit" class="btn bg-grey txt-ash full-width" onclick="printAward()" >
 				<i class="ion-android-send"></i>
 				Submit
 			</button>
@@ -108,3 +108,9 @@ if($data){
 
 <!-- <script src="../../../assets/js/app.js"></script>
  <script src="insertBonafide.js"></script> -->
+
+ <script type="text/javascript">
+ 	function printAward(){
+ 		alert ("grno");
+ 	}
+ </script>

@@ -4,7 +4,7 @@ $link = mysqli_connect("localhost", "admin", "12345", "dx2017");
 
 	$Gr_num= $_POST['grno'];
     $enroll_no= $_POST['enroll'];
-    $stu_name= $_POST['stu_name'];
+    $stu_name = $_POST['name'];
     $mname= $_POST['mname'];
     $fname=$_POST['fname'];
     $religion=$_POST['religion'];
@@ -22,6 +22,7 @@ $link = mysqli_connect("localhost", "admin", "12345", "dx2017");
     $created_at= date('Y-m-d H:i:s');
     $last_school_attend= $_POST['last-sch'];
 
+   
 
 $sql = "INSERT INTO `sch_lc` (`lc_no`, `Gr_num`, `enroll_no`, `stu_name`, `f_name`, `m_name`, `religion`,
   `cast_subcaste`, `nationality`, `dob`, `last_school_attend`, `pob`, `doa`, `progress`, `conduct`, `date_of_leaving`,

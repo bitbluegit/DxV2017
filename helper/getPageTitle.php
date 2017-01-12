@@ -60,7 +60,11 @@ $pageTitleArr =  array(
 
 	'enquiry' => array(
 		'icon-class' => 'ion-android-apps',
-		'title' => 'enquiry'
+		'title' => 'Enquiry'
+		),
+	'enquiry_form' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Enquiry Form'
 		),
 	
 	'edit_profile' => array(
@@ -118,6 +122,22 @@ $pageTitleArr =  array(
 	'add_award' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Add Award'
+		),
+	'lc_reprint' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Lc RePrint'
+		),
+	'genrateNoc' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Genrate No Objection Certificate',
+		),
+	'viewNoc' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'View Created Noc',
+		),
+	'circular' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Circular',
 		),
 	);
 

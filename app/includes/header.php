@@ -1,10 +1,11 @@
 <?php 
 
 	
-	require_once '../../../config/project-config.php';
+	 require_once '../../../config/project-config.php';
 	require_once '../../../helper/getPageTitle.php';
 	require_once '../../../helper/db.php';
 	require_once '../../../helper/session.php';
+	
 
    
 ?>

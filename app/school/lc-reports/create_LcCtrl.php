@@ -46,8 +46,8 @@ if($data){
 		</div>
 
 		<div class="col m12 l4">
-			<label for="Stu_name" class="font-weight100 small-caps full-width">Student Name</label>
-			<input class="full-width" type="text" id="Stu_name" name="Stu_name"    value="<?=$name?>" required>
+			<label for="name" class="font-weight100 small-caps full-width">Student Name</label>
+			<input class="full-width" type="text" id="name" name="name" value="<?=$name?>" required>
 		</div>
 
 		<div class="col m12 l4">

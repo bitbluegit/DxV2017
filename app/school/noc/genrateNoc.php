@@ -1,9 +1,7 @@
-<?php require_once "../../includes/header.php"; ?>
-
 <?php require_once '../../includes/header.php'; ?>
 
 <!-- ****************************
-**** bonafide enroll filter ****
+**** noc enroll filter ****
 ***************************** -->
 
 <section class="bg-white overflow-x box-shadow margin-bottom30" id="search-student-block">
@@ -23,8 +21,7 @@
 			</div> 
 			<!-- Submit Button --> 
 			<div class="col m12 l4 pad-top20 txt-left">
-				<button type="button" class="btn bg-grey txt-ash full-width" 
-				 onclick="getStudentDetailForAward(this)" style="margin-top: 3px;">
+				<button type="button" class="btn bg-grey txt-ash full-width"  onclick="getStudentDetailForNoc(this)" style=" margin-top: 3px;">
 					<i class="ion-android-send"></i>
 					Submit
 				</button>
@@ -39,9 +36,9 @@
 
 
 <!-- ****************************
-**** Create bonafide form ****
+**** Create NOC form ****
 ***************************** -->
-<section class="bg-white overflow-x box-shadow margin-bottom30" id="award-block">
+<section class="bg-white overflow-x box-shadow margin-bottom30" id="noc-block">
 
 	<!-- Bonafide Form Template Insert Here -->
 
@@ -49,5 +46,5 @@
 
 
 <script src="../../../assets/js/app.js"></script>
-<script src="award_form.js"></script>
+<script src="genrateNoc.js"></script>
 <!-- <script src="insertBonafide.js"></script> -->

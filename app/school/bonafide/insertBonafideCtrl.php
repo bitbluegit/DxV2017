@@ -30,11 +30,11 @@ if(mysqli_query($link, $sql)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
  
- header("location:bonafide_form.php");
+ // header("location:award_form.php");
  
 
 
-?>
+
 
 
 // class createUserCtrl{

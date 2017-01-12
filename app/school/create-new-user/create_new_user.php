@@ -103,5 +103,9 @@
 
 <script src="../../../assets/js/app.js"></script>
 <script src="create_user.js"></script>
-
-
+<script type="text/javascript">
+function updateUser(userid)
+  {
+    alert(userid);
+  }
+</script>

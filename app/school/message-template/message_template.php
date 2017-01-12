@@ -25,9 +25,9 @@
             <label for="section" class="font-weight100 small-caps full-width">Template For</label>
             <select id="section" name="section" class="full-width" title="Select One." required>
                 <option value="" disabled selected>Select One</option>
+                <option value="Common">All</option>
                 <option value="School">School</option>
                 <option value="College">College</option>
-                <option value="Common">Both</option>
             </select>
         </div>                      
 
