@@ -1,7 +1,5 @@
 <?php 
-
-$link = mysqli_connect("localhost", "admin", "12345", "dx2017");
-
+require_once '../../../helper/db.php';
 
 $enroll=$_POST['enroll'];
 $name=$_POST['Stu_name'];
@@ -23,14 +21,17 @@ VALUES ('$id', '$enroll', '', now(), '$name', '$fname', '$mname', '$dob', '$birt
  '', '$purpose')" ;
 
 
+			$affectedRowCount = DB::execute($sql);
+			if($affectedRowCount !== null ){
+				$response['status'] = 'success';
+				$response['msg'] = 'Class Created Success Fully ';
+			}else{
+				$response['status'] = 'failed';
+				$response['msg'] = 'Class Not Created Please try Again ';
+			}
 
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
  
- // header("location:award_form.php");
+ header("location:bonafide_print.php");
  
 
 

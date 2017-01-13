@@ -1,6 +1,6 @@
 <?php 
 
-$link = mysqli_connect("localhost", "admin", "12345", "dx2017");
+require_once '../../../helper/db.php';
 
 
 $enroll=$_POST['enroll'];
@@ -22,12 +22,14 @@ VALUES ('$id','', '$enroll', now(), '$name',  '$rollno', '$held_year', '$std',  
  '$letterno')" ;
 
 
-
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
+			$affectedRowCount = DB::execute($sql);
+			if($affectedRowCount !== null ){
+				$response['status'] = 'success';
+				$response['msg'] = 'NOC Created Success Fully ';
+			}else{
+				$response['status'] = 'failed';
+				$response['msg'] = 'NOC Not Created Please try Again ';
+			}
  
   header("location:nocCertificate.php");
  

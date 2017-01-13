@@ -1,6 +1,5 @@
 <?php require_once '../../includes/header.php'; ?>
 
-<?php require_once '../../includes/header.php'; ?>
 
 <!-- ****************************
 **** Create User Main Block ****

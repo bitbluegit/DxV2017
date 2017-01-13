@@ -1,6 +1,6 @@
 <?php 
+require_once '../../../helper/db.php';
 
-$link = mysqli_connect("localhost", "admin", "12345", "dx2017");
 
 	$Gr_num= $_POST['grno'];
     $enroll_no= $_POST['enroll'];
@@ -33,10 +33,22 @@ VALUES ( '','$Gr_num', '$enroll_no', '$stu_name', '$fname', '$mname', '$religion
     '$reason_of_leaving', '$remark', '$created_at'
   ) ";
 
- $result=mysqli_query($link,$sql);
-    if($result){
+// $result=mysqli_query($link,$sql);
+$affectedRowCount = DB::execute($sql);
+            if($affectedRowCount !== null ){
+                $response['status'] = 'success';
+                $response['msg'] = 'Class Created Success Fully ';
+            }else{
+                $response['status'] = 'failed';
+                $response['msg'] = 'Class Not Created Please try Again ';
+            }
+
+    if($affectedRowCount){
     // update stu std to Mr.Dextro  
-        mysqli_query($link," UPDATE user_sch  SET `Std`='Mr.Dextro' WHERE `Gr_num`='".$Gr_num."'  ");
+       $sql1 =" UPDATE user_sch  SET `Std`='Mr.Dextro' WHERE `Gr_num`='".$Gr_num."'  ");
+        $updateStd = DB::execute($sql1);
+
+
     }
     header("location:lc_form.php");
 

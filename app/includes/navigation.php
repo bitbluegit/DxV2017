@@ -15,11 +15,11 @@
 				<a href="../create-bus-fee/create_bus_fee.php">
 				<i class="ion-android-bus"></i>
 				Create Bus Fee
-				<a>
+				<a href="../update-student/update_student_info.php">
 					<i class="ion-arrow-graph-up-right"></i>
 					Update Student Info
 				</a>
-				<a>
+				<a href="../student-search/student_src.php">
 					<i class="ion-arrow-graph-up-right"></i>
 					Search Student
 				</a>

@@ -1,6 +1,7 @@
 <?php 
 
-require_once '../../../helper/require.php';
+// require_once '../../../helper/require.php';
+require_once '../../../helper/db.php';
 
 class createClassCtrl{
 

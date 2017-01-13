@@ -139,6 +139,14 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Circular',
 		),
+	'circularPrint' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Circular Print',
+		),
+	'student_list' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Student List',
+		),
 	);
 
 $pageTitleIcon = $pageTitleArr[GetPageTitle::getTitle($_SERVER['REQUEST_URI'])];

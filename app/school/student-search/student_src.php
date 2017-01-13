@@ -8,25 +8,38 @@
 	</h5>
 	<!-- Expense Form -->
 	<form class="row" method="post" >
+
+		<!--name -->
+		<div class="col m12 l4">
+			<label for="name" class="font-weight100 small-caps full-width">Name</label>
+			<input type="text" id="name" class="full-width" placeholder="Enter Student Name" title="Enter Student Name.">
+		</div>
+
 		<!-- student Enroll -->
 		<div class="col m12 l4">
 			<label for="enroll_no" class="font-weight100 small-caps full-width">Enroll Number</label>
 			<input type="number" id="enroll_no" class="full-width" placeholder="Enter Enroll Number" title="Enter Student Enroll Number.">
 		</div>
 
-		<!--Password -->
-		<div class="col m12 l4">
-			<label for="name" class="font-weight100 small-caps full-width">Name</label>
-			<input type="text" id="name" class="full-width" placeholder="Enter Student Name" title="Enter Student Name.">
-		</div>
-
-		<!-- User type -->
+		<!-- standard -->
 		<div class="col m12 l4">
 			<label for="standard" class="font-weight100 small-caps full-width">Standard</label>
 			<select id="standard" class="full-width" title="Select Student Standard.">
-				<option value="" disabled selected >Select One</option>
+				<option value="" disabled selected>Select Std</option>
+				<option value="nursery">Nursery</option>
+				<option value="junior.kg">jr.kg</option>
+				<option value="senior.kg">sr.kg</option>	
 				<option value="first">First</option>
 				<option value="second">Second</option>
+				<option value="third">Third</option>
+				<option value="fourth">Fourth</option>
+				<option value="fifth">Fifth</option>
+				<option value="sixth">Sixth</option>
+				<option value="seventh">Seventh</option>
+				<option value="eighth">Eighth</option>
+				<option value="ninth">Ninth</option>
+				<option value="tenth">Tenth</option>
+				<option value="Mr.dextro">Mr.dextro</option>
 			</select>
 		</div>
 
@@ -37,6 +50,7 @@
 				Submit
 			</button>
 		</div>
+
 	</form>
 </div>
 
