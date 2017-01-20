@@ -1,5 +1,4 @@
 <?php
-
 // define ('PDO_FETCH_STYLE',PDO::FETCH_ASSOC);
 // define ('PDO_ERROR_MODE',PDO::ERRMODE_EXCEPTION);
 

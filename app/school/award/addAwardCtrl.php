@@ -1,7 +1,7 @@
 <?php 
 
 require_once '../../../helper/db.php';
-
+$curdate = date("Y-m-d");
 
 $enroll=$_POST['enroll'];
 $name=$_POST['Stu_name'];
@@ -14,7 +14,8 @@ $remark=$_POST['remark'];
    $id=$_COOKIE['Id'];
 
 
- 	 $sql="INSERT INTO `sch_awards`(`unique_id`, `Gr_no`, `name`, `mdm`, `std`, `section`, `name_of_competition`, `remark`, `date`) VALUES ('$id','$enroll','$name','$mdm','$std','$section','$comp','$remark','$date')";
+ 	 $sql="INSERT INTO `sch_awards`(`unique_id`, `Gr_no`, `name`, `mdm`, `std`, `section`, `name_of_competition`, `remark`, `date`,`created_at`) VALUES ('$id','$enroll','$name','$mdm','$std','$section','$comp','$remark','$date', '$curdate'
+ 	 )";
 
 
 
@@ -28,4 +29,4 @@ $affectedRowCount = DB::execute($sql);
 			}
 
  
- header("location:printAward.php?enroll=$enroll");
+header("location:printAward.php);

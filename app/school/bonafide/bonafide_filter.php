@@ -13,7 +13,7 @@ $conEnroll  = $reqData['enroll'] != '' ? " AND BF.`gr_no`='{$reqData['enroll']}'
 $conDate  = ($sDate  != '' &&  $eDate != '') ? " AND BF.`date` BETWEEN '{$sDate}' AND '{$eDate}' " : '';
 
 $sql = " SELECT AD.`name` AS 'user_name' ,BF.`gr_no`, BF.`name` AS 'stu_name' ,
-BF.`FatherName` ,BF.`std` ,  BF.`address`,BF.`purpose`, DATE_FORMAT(BF.`date`,'%d/%m/%Y') AS 'date'
+BF.`FatherName` ,BF.`std` ,BF.`purpose`, DATE_FORMAT(BF.`date`,'%d/%m/%Y') AS 'date'
 FROM bonafide BF 
 INNER JOIN admin_sch AD ON AD.`unique_id` = BF.`unique_id`
 WHERE 1=1 {$conName} {$conStd} {$conEnroll} {$conDate} "; 

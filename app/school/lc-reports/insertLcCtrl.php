@@ -45,10 +45,11 @@ $affectedRowCount = DB::execute($sql);
 
     if($affectedRowCount){
     // update stu std to Mr.Dextro  
-       $sql1 =" UPDATE user_sch  SET `Std`='Mr.Dextro' WHERE `Gr_num`='".$Gr_num."'  ");
+       $sql1 =" UPDATE user_sch  SET `Std`='Mr.Dextro' WHERE `Gr_num`='".$Gr_num."'  ";
         $updateStd = DB::execute($sql1);
 
 
     }
-    header("location:lc_form.php");
+
+    header("location:PrintLC.php");
 

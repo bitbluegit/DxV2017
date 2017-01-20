@@ -5,7 +5,6 @@
 	$data = DB::oneRow($sql);
 	$cir_data =extract($data);
 	// echo $cir_no;
-	// echo $cir_subject;
 
  ?>
 

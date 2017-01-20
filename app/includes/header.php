@@ -46,11 +46,11 @@
 	
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="../../../assets/css/vendor/bricks.css" />
-	<link rel="stylesheet" type="text/css" href="../../../assets/css/vendor/ionicons/ionicons.min.css">
+	 <link rel="stylesheet" type="text/css" href="../../../assets/css/vendor/ionicons/ionicons.min.css">
 	<link rel="stylesheet" type="text/css" href="../../../assets/css/utilities.css" />
 	<link rel="stylesheet" type="text/css" href="../../../assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="../../../assets/css/login.css">
-
+ 
 </head>
 
 <body>

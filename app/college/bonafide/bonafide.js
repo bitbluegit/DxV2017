@@ -16,13 +16,13 @@ function getFormData(formId){
 	}
 
 
-	function filterNoc(){
-		var paramsObj = getFormData("noc-filter") ,
+	function filterBonafide(){
+		var paramsObj = getFormData("bonafide-filter") ,
 		callBackFun = function(res){
 			document.getElementById('filter-data').innerHTML = res;
 		};
 
-		AjaxPost('noc_filter.php',paramsObj,callBackFun,'txt');
+		AjaxPost('bonafide_filter.php',paramsObj,callBackFun,'txt');
 	}
 
 

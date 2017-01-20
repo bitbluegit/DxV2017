@@ -39,3 +39,9 @@ $GLOBALS['DX_DATETIME'] = array(
 $GLOBALS['MEDIUM'] = array( 'English','Hindi','Marathi');
 
 $GLOBALS['STD'] = array( 'nursery','junior.kg','senior.kg','first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','Mr.dextro' );
+
+// collge course
+$GLOBALS['COURSE'] = array( 'Science','Science-KT','Commerce','Commerce-KT','Arts','Arts-KT');
+
+$GLOBALS['YEAR'] = array( 'F.Y.J.C','S.Y.J.C');
+

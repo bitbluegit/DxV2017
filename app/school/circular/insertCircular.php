@@ -1,6 +1,7 @@
 <?php 
  require_once '../../../helper/db.php';
-$cir_no = $_POST['cnumber'];
+
+ $cir_no = $_POST['cnumber'];
 $desc = $_POST['desc'];
 $subject =$_POST['subject'];
 $date = $_POST['date'];
@@ -13,10 +14,10 @@ $sql = "INSERT INTO `circular`( `cir_desc`, `cir_subject`,`cir_date`, `cir_for`,
 			$affectedRowCount = DB::execute($sql);
 			if($affectedRowCount !== null ){
 				$response['status'] = 'success';
-				$response['msg'] = 'Class Created Success Fully ';
+				$response['msg'] = 'Circular Created Success Fully ';
 			}else{
 				$response['status'] = 'failed';
-				$response['msg'] = 'Class Not Created Please try Again ';
+				$response['msg'] = 'Circular Not Created Please try Again ';
 			}
 
 header("location:circularPrint.php?cir_no=$cir_no");

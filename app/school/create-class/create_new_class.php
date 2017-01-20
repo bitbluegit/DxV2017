@@ -95,8 +95,7 @@
         $userDataArr = DB::allRow($sql);
         foreach ($userDataArr as $user){
          $user_id = array_pop($user);
-         $btn = "<button class='btn btn-green' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-up'></i> </button>
-         <button class='btn btn-red' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-down'></i> </button>";
+         $btn = "<button class='btn btn-red' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-down'></i> </button>";
 
          echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$user),$btn);
        }
@@ -148,9 +147,9 @@
 <script src="../../../assets/js/app.js"></script>
 <script src="create_class.js"></script>
 <script type="text/javascript">
-  function updateUser(userid)
+  function updateUser(id)
   {
-    alert(userid);
+    alert(id);
   }
   
 </script>

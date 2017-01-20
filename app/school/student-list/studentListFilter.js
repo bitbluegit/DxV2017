@@ -17,12 +17,16 @@ function getFormData(formId){
 
 
 	function filterStudentData(){
+		document.getElementById('showDiv').style.display= "block";
+		document.getElementById('divHide').style.display= "none";
+
 		var paramsObj = getFormData("student-filter") ,
 		callBackFun = function(res){
 			document.getElementById('filter-data').innerHTML = res;
 		};
 
 		AjaxPost('student_filter.php',paramsObj,callBackFun,'txt');
+
 	}
 
 

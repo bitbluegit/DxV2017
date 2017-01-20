@@ -39,20 +39,7 @@
             <label for="standard" class="font-weight100 small-caps full-width">Standard</label>
             <select id="standard" name="standard" class="full-width" title="Select Your Standatd.">
                 <option value="" disabled selected>Select One</option>
-                <option value="nursery">Nursery</option>
-                <option value="junior.kg">jr.kg</option>
-                <option value="senior.kg">sr.kg</option>
-                <option value="first">First</option>
-                <option value="second">Second</option>
-                <option value="third">Third</option>
-                <option value="fourth">Fourth</option>
-                <option value="fifth">Fifth</option>
-                <option value="sixth">Sixth</option>
-                <option value="seventh">Seventh</option>
-                <option value="eighth">Eighth</option>
-                <option value="ninth">Ninth</option>
-                <option value="tenth">Tenth</option>
-                <option value="Mr.dextro">Mr.dextro</option>
+                 <?php foreach($GLOBALS['STD'] as $std){ echo sprintf("<option value='%s'>%s</option>",$std,$std); } ?>
             </select>
         </div>
 
@@ -79,7 +66,6 @@
             <tr class="txt-ash">     
                 <th >User Name</th>
                 <th >Enroll No.</th>
-                <th >Gr No.</th>
                 <th >Name</th>
                 <th >Father Name</th>
                 <th >Standard</th>

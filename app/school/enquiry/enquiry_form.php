@@ -64,10 +64,7 @@
 		<div class="col m12 l4">
 			<label for="medium" class="font-weight100 small-caps full-width">Medium</label>
 			<select id="medium" name="medium" class="full-width" title="Select your medium.">
-				<option value="" disabled selected>Select Medium</option>
-				<option value="English">English</option>
-				<option value="Hindi">Hindi</option>
-				<option value="Marathi">Marathi</option>
+				 <?php foreach($GLOBALS['MEDIUM'] as $mdm){echo sprintf("<option value='%s'>%s</option>",$mdm,$mdm); } ?>
 			</select>
 		</div>
 
@@ -77,20 +74,7 @@
 			<select id="standard" name="standard" class="full-width" title="Select your Standard."
 			onchange="getSection()">
 			<option value="" disabled selected>Select Std</option>
-			<option value="nursery">Nursery</option>
-			<option value="junior.kg">jr.kg</option>
-			<option value="senior.kg">sr.kg</option>
-			<option value="first">First</option>
-			<option value="second">Second</option>
-			<option value="third">Third</option>
-			<option value="fourth">Fourth</option>
-			<option value="fifth">Fifth</option>
-			<option value="sixth">Sixth</option>
-			<option value="seventh">Seventh</option>
-			<option value="eighth">Eighth</option>
-			<option value="ninth">Ninth</option>
-			<option value="tenth">Tenth</option>
-			<option value="Mr.dextro">Mr.dextro</option>
+			 <?php foreach($GLOBALS['STD'] as $std){ echo sprintf("<option value='%s'>%s</option>",$std,$std); } ?>
 		</select>
 	</div>
 	<!-- User type -->
@@ -105,7 +89,7 @@
 
 	<!-- Submit Button -->
 	<div class="col m12 pad-top10 txt-left">
-		<button type="submit" class="btn bg-grey txt-ash full-width" id="addEnquirySubmit">
+		<button type="submit" class="btn bg-grey txt-ash full-width" id="addEnquirySubmit" onclick="redirect()">
 			<i class="ion-android-send"></i>
 			Submit
 		</button>
@@ -131,6 +115,7 @@
 <script src="../../../assets/js/app.js"></script>
 <script src="addEnquiry.js"></script>
 <script type="text/javascript">
+
 	function updateUser(userid)
 	{
 		alert(userid);

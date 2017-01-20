@@ -31,12 +31,24 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'DashBoard'
 		),
+	'add_student' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Admission Form'
+		),
 
 	'bonafide' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Bonafide'
 		),
-	
+	'bonafide_print' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Print Bonafide Certificate'
+		),
+	'ReprintBonafide' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'RePrint Bonafide'
+		),
+
 	'create_new_user' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Create New User'
@@ -66,7 +78,10 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Enquiry Form'
 		),
-	
+	'enquiryPrintForm' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Enquiry Form Print'
+		),
 	'edit_profile' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Edit Profile'
@@ -80,6 +95,11 @@ $pageTitleArr =  array(
 	'lcreport' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'LC Report'
+		),
+
+	'PrintLC' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'LC Print'
 		),
 
 	'message_template' => array(
@@ -123,6 +143,18 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Add Award'
 		),
+	'printAward' => array (
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Award Certificate'
+		),
+	'awardFilter' => array (
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Award Report'
+		),
+	'rePrintAward' => array (
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Award Certificate'
+		),
 	'lc_reprint' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Lc RePrint'
@@ -130,6 +162,10 @@ $pageTitleArr =  array(
 	'genrateNoc' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Genrate No Objection Certificate',
+		),
+	'nocCertificate' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Print No Objection Certificate',
 		),
 	'viewNoc' => array(
 		'icon-class' => 'ion-android-apps',
@@ -143,9 +179,23 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Circular Print',
 		),
+	'circularFilter' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Circular Report',
+		),
+	'printCircular' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'RePrint Circular',
+		),
+
+
 	'student_list' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Student List',
+		),
+	'upd_student_details' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Update Student List',
 		),
 	);
 

@@ -1,0 +1,120 @@
+.wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 750px;
+    border: 3px solid #424242;
+    border-radius: 3px;
+    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75);
+}
+.title {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.title h2 {
+    font-family: serif;
+    color: #cc4040;
+    text-shadow: 2px 2px #cc4040
+}
+.title h2+p {
+    font-weight: 700;
+    font-size: 2rem;
+}
+.title h2, .title p {
+    margin-bottom: 0;
+}
+.title p {
+    font-size: 1.2rem;
+}
+.separator {
+    position: relative;
+    height: 30px;
+    background: #292969;
+    top: -14px;
+    z-index: -9999;
+}
+.student {
+    position: relative;
+    left: 15px;
+}
+.dashed-fields {
+    display: inline-block;
+    border-bottom: 1px dashed;
+}
+.head {
+    margin-top: 2rem;
+}
+.head-block {
+    display: inline-block;
+    background: #292969;
+    padding: 2px 15px;
+    color: #fff;
+}
+.sub-block {
+    background: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    top: -1rem;
+   /* z-index: -9999;*/
+}
+.w100 {
+    width: 100px;
+}
+.w130 {
+    width: 130px;
+}
+.w150 {
+    width: 150px;
+}
+.w200 {
+    width: 200px;
+}
+.w230 {
+    width: 230px;
+}
+.w255 {
+    width: 255px;
+}
+.w280 {
+    width: 280px;
+}
+.w315 {
+    width: 315px;
+}
+.w420 {
+    width: 420px;
+}
+/*---- was by mistake----*/
+.w529 { 
+    width: 515px;
+}
+/*---- was by mistake----*/
+.w539 {
+    width: 525px;
+}
+.w569 {
+    width: 569px;
+}
+.w560 {
+    width: 560px;
+}
+.w569 {
+    width: 569px;
+}
+.ft12 {
+    font-size: 1.2rem;
+}
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+.maroon {
+    color: maroon;
+    text-decoration: overline;
+    font-weight: 700;
+}
+//-------------------------------------------

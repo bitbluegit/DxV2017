@@ -16,6 +16,7 @@ document.getElementById('createBonafideSubmit').addEventListener('click',functio
 		params.purpose = elementById('purpose').value;
 
 		AjaxPost('insertBonafideCtrl.php',params,fn,'txt');
+		
 
 	});
 

@@ -23,32 +23,24 @@ class addEnquiryCtrl{
 		
 	// validate data 
 		$formData = self::validateData($data);
-		// $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '1';
-
-		 // $query =  " select * from  where uname='{$formData['uname']}' AND
-		 //  pwd ='{$formData['pswd']}' " ;
-
-		// if(DB::oneRow($sql)){
-		// 	$response['status'] = 'failed';
-		// 	$response['msg'] = 'Try Diffrent UserName And Password';
-		// }else{
-
-			$sql = " INSERT INTO `enquiry` (`sr_no`, `name`, `f_name`,`m_name`,`sex`,`DOB,`cont_num`, `medium`,
-			 `std`,`section`)
-			VALUES ('','{$formData['name']}', '{$formData['fname']}', '{$formData['mname']}',
-			'{$formData['gender']}','{$formData['dob']}','{$formData['contact']}','{$formData['mdm']}','{$formData['std']}',
-			'{$formData['sec']}') " ;
+		extract($formData);
+		$currentDate = date('Y-m-d');
+		$id=$_COOKIE['Id'];
 
 
-			$affectedRowCount = DB::execute($sql);
-			if($affectedRowCount !== null ){
-				$response['status'] = 'success';
-				$response['msg'] = 'User Created Success Fully ';
-			}else{
-				$response['status'] = 'failed';
-				$response['msg'] = 'User Not Created Please try Again ';
-			}
-			
+		$sql = " INSERT INTO `enquiry` (`unique_id` ,`name`, `f_name`,`m_name`,`sex`,`DOB`,`cont_num`, `medium`, `std`,`section`,`enq_date`)
+		VALUES ($id,'{$name}', '{$fname}', '{$mname}', '{$gender}','{$dob}','{$contact}','{$mdm}','{$std}', '{$sec}','{$currentDate}' ) " ;
+
+
+		$affectedRowCount = DB::execute($sql);
+		if($affectedRowCount !== null ){
+			$response['status'] = 'success';
+			$response['msg'] = 'Enquiry Inserted Success Fully ';
+		}else{
+			$response['status'] = 'failed';
+			$response['msg'] = 'Enquiry Not Inserted Please try Again ';
+		}
+		
 		// }
 
 		echo json_encode($response);
@@ -57,3 +49,4 @@ class addEnquiryCtrl{
 
 
 addEnquiryCtrl::addEnquiry( json_decode($_POST['data'], true) );
+

@@ -21,8 +21,6 @@ INNER JOIN sch_details AS SD ON SD.`Gr_num`=US.`Gr_num`
 WHERE 1=1 {$conMdm} {$conStd} {$conSec} "; 
 
 $data  = DB::allRow($sql);
-extract($data);
-
 if($data){
 	foreach ($data as $row) {
 		echo sprintf('<tr><td>%s</td></tr>',implode('</td><td>', $row));

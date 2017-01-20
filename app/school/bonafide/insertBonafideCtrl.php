@@ -1,5 +1,6 @@
 <?php 
-require_once '../../../helper/db.php';
+require_once '../../../helper/require.php';
+
 
 $enroll=$_POST['enroll'];
 $name=$_POST['Stu_name'];
@@ -10,7 +11,8 @@ $birth_place=$_POST['birth-place'];
 $std=$_POST['standard'];
 $religion=$_POST['religion'];
 $purpose=$_POST['purpose'];
-   $id=$_COOKIE['Id'];
+
+$id = $_COOKIE['Id'];
 
 
 

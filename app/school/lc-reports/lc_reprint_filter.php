@@ -20,9 +20,11 @@ if($data){
 	foreach ($data as $row) {
 			$lc_no = array_shift($row);
 
-		  $btn = "<button  onclick='lcreprint({$lc_no})'> <i class='ion-printer'></i> </button>";
-		  echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$row),$btn);
-	}
+		  $btn = "<button class='btn btn-green' onclick='lcreprint({$lc_no})'><i class='ion-ios-printer'></i>
+		  </button>&nbsp;
+		  <button class='btn btn-red' onclick='deletelc({$lc_no})'><i class='ion-trash-b'></i> </button>"; 
+		   echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$row),$btn);
+       }
 }else{
 	echo '<tr><td colspan="10" style="text-align:center;color:#f00; font-weight:600;font-size:16px;">No Lc Found !<td></tr>';
 }

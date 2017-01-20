@@ -52,28 +52,3 @@ class createClassCtrl{
 
 
 createClassCtrl::insertClass( json_decode($_POST['data'], true) );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

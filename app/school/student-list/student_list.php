@@ -1,20 +1,12 @@
 <?php 
 
-require_once '../../includes/header.php'; 
-
+require_once '../../includes/header.php'; ?>
+<!-- 
 /********************
 ** student list filter **
-********************/
-
-$schUserData = DB::allRow(" SELECT AD.`unique_id` AS 'user_id' ,  AD.`Name`  AS 'user_name'
-	FROM admin_sch AD WHERE AD.type='School' ORDER BY AD.`Name` ") ;
-$schUserOpts = "" ;
-foreach ($schUserData as $data) {
-	$schUserOpts .= sprintf("<option value='%s'>%s </option>",$data['user_id'],$data['user_name']); 
-}
+********************/ -->
 
 
-?>
 
 <!-- Student list  Filter Form -->
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">
@@ -30,7 +22,7 @@ foreach ($schUserData as $data) {
 		<div class="col m12 l4">
 			<label for="type" class="font-weight100 small-caps full-width">Type</label>
 			<select id="type" name="type" class="full-width" title="Select your medium.">
-				<option value="" disabled selected>Select One</option>
+				<!-- <option value="" disabled selected>Select One</option> -->
 				<option value="student_list">Student List</option>
 				<option value="idcard">Id Card</option>
 			</select>
@@ -77,6 +69,7 @@ foreach ($schUserData as $data) {
 
 
 <!-- student list data Data -->
+<div id="divHide">
 <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
 	<i class="ion-ios-paper-outline margin-right20"></i>
 	Student Details
@@ -120,10 +113,11 @@ foreach ($schUserData as $data) {
 		</tbody>
 	</table>
 </div>
-
+</div> <!-- div Hide -->
 
 
 <!-- student list data Data -->
+<div class="hide" id="showDiv">
 <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
 	<i class="ion-ios-paper-outline margin-right20"></i>
 	Student Details
@@ -149,7 +143,7 @@ foreach ($schUserData as $data) {
 </div>
 
 
-
+</div> <!-- student data block -->
 
 
 

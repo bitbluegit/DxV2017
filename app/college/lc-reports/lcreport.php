@@ -4,10 +4,10 @@
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">
     <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
         <i class="ion-android-settings margin-right20"></i>
-        Noc Filter
+        LC Reports
     </h5>
     <!-- Expense Form -->
-    <form class="row" method="post" name="noc-filter" id="noc-filter" action="#" onsubmit="return false">
+    <form class="row" method="post" name="lc-filter" id="lc-filter" action="#" onsubmit="return false">
         <!-- Start Date -->
         <div class="col m12 l4">
             <label for="startdate" class="font-weight100 small-caps full-width">Start Date</label>
@@ -23,7 +23,7 @@
         <!-- Name -->
         <div class="col m12 l4">
             <label for="name" class="font-weight100 small-caps full-width">Name</label>
-             <input type="text" id="name" name="name" class="full-width" title="Enter Student name..">
+            <input type="text" id="name" name="name" class="full-width" title="Enter student name.">
         </div>
 
         <!-- enroll no -->
@@ -60,7 +60,7 @@
 
         <!-- Submit Button -->
         <div class="col m12 pad-top10 txt-left">
-            <button type="submit" class="btn bg-grey txt-ash full-width" onclick="filterNoc()">
+        <button type="submit" class="btn bg-grey txt-ash full-width" onclick="filterLc()">
                 <i class="ion-android-send"></i>
                 Submit
             </button>
@@ -71,39 +71,33 @@
 <!-- ENquiry details Data -->
 <h5 class="bg-ash pad10 small-caps txt-white align-left margin-bottom-zero">
     <i class="ion-ios-paper-outline margin-right20"></i>
-    Created Bonafide
+    LC Reports
 </h5>
 <div class="bg-white overflow-x box-shadow margin-bottom30">
     <table class="full-width margin-bottom-zero">
-    <thead>
+       <thead>
             <tr class="txt-ash">     
-                <th >User Name</th>
+                <th >LC No.</th>
                 <th >Enroll No.</th>
-                <th >Lc No.</th>
-                <th >Name</th>                
+                <th >Name</th>
                 <th >Standard</th>
-                <th >Medium</th>
-                <th >Held Year</th>
-                <th >letter no.</th>
-                <th>Date</th>
-                <th>Issue Date</th>
-
-            </tr>        
-    </thead>
+                <th >Remark</th>
+                <th >Issue Date</th>
+            </tr>           
+       </thead>
 
         <tbody id="filter-data">
+
            <!--  <tr>                               
-                <td >Admin</td>
+                <td >1</td>
                 <td >001</td>
-                <td >14</td>
                 <td >hr</td>
-                <td >ar</td>
                 <td >First</td>
-                <td >a</td>
                 <td >-</td>
                 <td >12/12/2016</td>                                
-            </tr> -->
+            --> </tr>
            
+
         </tbody>
     </table>
 </div>
@@ -114,6 +108,7 @@
 <!-- /Container -->
 
 
+
  <!-- scripts  -->
         <script src="../../../assets/js/app.js"></script>
-        <script src="viewnoc.js"></script>
+        <script src="lcreport.js"></script>

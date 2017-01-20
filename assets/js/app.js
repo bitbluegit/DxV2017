@@ -15,7 +15,6 @@
 	}
 
 	function getElementAttArray(cssSelector) {
-
 		// Array.prototype.slice.call(document.querySelectorAll('#create-class-form input[type="number"]')[0].attributes).forEach(function(item) {
 		// 	console.log(item.name + ': '+ item.value);
 		// });
@@ -23,9 +22,23 @@
 		return document.querySelectorAll(element);	
 	}
 
+
+	function modalShow(htm){
+		var html = '<span class="modal-x" onclick="modalHide()">X</span>' + htm;
+		document.querySelector('.modal-content').innerHTML = html;	
+		document.querySelector('.modal').classList.remove('hide-block');
+	}
+
+	function modalHide(){
+		document.querySelector('.modal').classList.add('hide-block');
+	}
+
 	window.elementById=elementById;
 	window.elementByIdValue=elementByIdValue;
 	window.elementByClass=elementByClass;
+	window.modalShow = modalShow;
+	window.modalHide = modalHide;
+
 	// return {
 	// 	elementById:elementById,
 	// 	elementByClass:elementByClass
@@ -142,5 +155,13 @@ function AjaxPost(url,paramsObj,callBackFunction,responseType ,async){
 
 }());
 
+
+
+
+function Init(){
+
+}
+
+window.onload = Init();
 
 console.log('app js here');

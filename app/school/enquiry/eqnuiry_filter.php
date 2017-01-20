@@ -13,7 +13,7 @@ $conUserId  = $reqData['username'] != '' ? " AND EQ.`unique_id`='{$reqData['user
 $conDate  = ($sDate  != '' &&  $eDate != '') ? " AND EQ.`enq_date` BETWEEN '{$sDate}' AND '{$eDate}' " : '';
 
 $sql = " SELECT EQ.`sr_no` ,EQ.`name` AS 'user_name' , EQ.`name` AS 'stu_name' ,
-EQ.`f_name` ,  EQ.`medium`,EQ.`std` , EQ.`cont_num`,  EQ.`address`, EQ.`remark`, DATE_FORMAT(EQ.`enq_date`,'%d/%m/%Y') AS 'enq_date'
+EQ.`f_name` ,  EQ.`medium`,EQ.`std` , EQ.`cont_num`,  EQ.`address`, EQ.`remark`, DATE_FORMAT(EQ.`enq_date`,'%Y/%m/%d') AS 'enq_date'
 FROM enquiry EQ 
 INNER JOIN admin_sch AD ON AD.`unique_id` = EQ.`unique_id`
 WHERE 1=1 {$conMdm} {$conStd} {$conUserId} {$conDate} "; 
