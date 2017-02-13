@@ -1,3 +1,51 @@
+
+
+/**************** DX OBJECT *************
+** 1 . eById : Get Element By ID
+** 2 . eByIdVal : Get  Element By ID Value
+** 3.  AjaxPost : Post Method 
+****************************************/
+
+
+var DX =  {};
+
+DX.eById = function(id){
+	return document.getElementById(id);
+};
+
+DX.eByIdVal = function(id){
+	return eById(id).value.trim();
+};
+
+// Ajax Post Method 
+DX.AjaxPost = function(url,paramsObj,callBackFunction,responseType ,async){
+
+	var params = "data=" + JSON.stringify(paramsObj) ,  
+	async = async || true ,
+	resType = responseType || 'text/plain' ;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, async);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function () {
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			var resData = ( resType == 'json' ? JSON.parse(xhr.responseText) : xhr.responseText );
+  			callBackFunction(resData); // Call Back 
+  		}
+  	};
+
+  	xhr.send(params);
+  };
+
+  DX.pageReload = function(){
+  	return function(){ window.location.reload();}
+  }
+
+  /**************** DX OBJECT ***END***  *************/
+
+
+
+
 // DOM ACCESSS FUNCTIONS 
 (function(){
 	'use strict';
@@ -6,7 +54,24 @@
 		return document.getElementById(id);
 	}
 
+	function eById(id){
+		return document.getElementById(id);
+	}
+
+	function setStyleById(id,styleTxt){
+		eById(id).setAttribute('style',styleTxt);
+
+	}
+
 	function elementByIdValue(id){
+		return document.getElementById(id).value.trim();
+	}
+
+	function eIdVal(id){
+		return document.getElementById(id).value.trim();
+	}
+
+	function eByIdVal(id){
 		return document.getElementById(id).value.trim();
 	}
 
@@ -38,6 +103,9 @@
 	window.elementByClass=elementByClass;
 	window.modalShow = modalShow;
 	window.modalHide = modalHide;
+	window.eIdVal = eIdVal;
+	window.eById = eById;
+	window.setStyleById = setStyleById;
 
 	// return {
 	// 	elementById:elementById,

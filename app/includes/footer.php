@@ -35,13 +35,14 @@
 
 
 <footer>
-	@copyright bitblue tech
+	<!-- @copyright bitblue tech -->
 </footer>	
 
 </div> <!-- Main-Row  -->
 
 
 <!-- scripts -->
+<script src="../../../assets/js/app.js"></script>
 
 <!-- <link rel="stylesheet" href="./../../assets/js/app.js"> -->
 

@@ -1,4 +1,5 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/usr_sch_header.php';
+//require_once '../../includes/header.php'; ?>
 
 <!-- Transaction Filter Form -->
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">

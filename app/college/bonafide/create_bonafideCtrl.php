@@ -6,10 +6,10 @@ $reqData =  json_decode($_POST['data'],true);
 
 
 $sql = " 
-SELECT US.Gr_num, SC.`name`, US.Std, SC.`f_name`, SC.`m_name`, SC.`DOB`, SC.`birth_place`, SC.`religion` 
-FROM user_sch US 
-INNER JOIN sch_details SC ON US.Gr_num = SC.Gr_num 
-WHERE US.Gr_num = '{$reqData['enroll']}' 
+SELECT UC.Gr_num, CD.`name`, UC.year, CD.`f_name`, CD.`m_name`, CD.`DOB`, CD.`birth_place`, CD.`religion` 
+FROM user_clg UC 
+INNER JOIN clg_details CD ON UC.Gr_num = CD.Gr_num 
+WHERE UC.Gr_num = '{$reqData['enroll']}' 
 ";
 
 $data  = DB::oneRow($sql);
@@ -58,9 +58,11 @@ if($data){
 			<input class="full-width" type="text" id="mname" name="mname"    value="<?= $m_name ?>"   required>
 		</div>
 
+		
+
 		<div class="col m12 l4">
-			<label for="standard" class="font-weight100 small-caps full-width">Standard</label>
-			<input class="full-width" type="text" id="standard" name="standard"    value="<?= $Std ?>"   required>
+			<label for="year" class="font-weight100 small-caps full-width">Year</label>
+			<input class="full-width" type="text" id="year" name="year"    value="<?= $year ?>"   required>
 		</div>
 
 		<div class="col m12 l4">

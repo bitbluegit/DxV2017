@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/clg_header.php'; ?>
 
 
 <!-- ****************************
@@ -113,14 +113,10 @@
 
 
       // User Details 
-        $sql = " SELECT admin_sch.type , clg_class.Medium , clg_class.Course ,clg_class.CourseName ,clg_class.year , clg_class.no_of_div ,COUNT(CD.`Gr_num`)AS strength, clg_class.unique_id  FROM clg_class 
-        INNER JOIN admin_sch ON clg_class.unique_id=admin_sch.unique_id
-        INNER JOIN clg_details AS CD ON clg_class.`unique_id`=CD.`unique_id`;
-        ORDER BY FIELD(MEDIUM,'English','Hindi','Marathi'),FIELD(`Course`,'Science', 'Science-KT','Commerce','Commerce-KT',
-        'Arts','Arts-KT','Left')";
+        $sql = "SELECT AD.`Name` AS 'User', CC.`Medium`,CC.`Course`,CC.`CourseName`,CC.`year`,CC.`no_of_div`,CC.`no_of_div` AS 'str' FROM clg_class CC INNER JOIN admin_sch AD ON AD.`unique_id`=CC.`unique_id`";
         $userDataArr = DB::allRow($sql);
         foreach ($userDataArr as $user){
-         $user_id = array_pop($user);
+         // $user_id = array_pop($user);
          $btn = "
          <button class='btn btn-red' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-down'></i> </button>";
 
@@ -172,8 +168,28 @@
 
 <!-- scripts  -->
 <script src="../../../assets/js/app.js"></script>
-<script src="create_class.js"></script>
+<!-- <script src="create_class.js"></script> -->
 <script type="text/javascript">
+  elementById('createClassSubmit').addEventListener('click',function(){
+  var params = {} ,
+  fn = function(){
+     // alert('hello');
+     window.location.reload();
+    };
+
+    params.mdm = elementById('medium').value;
+    params.crs = elementById('course').value;
+    params.year = elementById('year').value;
+    params.cname = elementById('cname').value;
+    params.div = elementById('division').value;
+    params.sub = elementById('subject').value;
+    AjaxPost('createClassCtrl.php',params,fn,'txt');
+
+  });
+
+
+
+
   function updateUser(userid)
   {
     alert(userid);

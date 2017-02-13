@@ -1,7 +1,10 @@
 <?php 
 
-// require_once '../../../helper/require.php';
 require_once '../../../helper/db.php';
+$reqData =  json_decode($_POST['data'],true);
+extract($reqData);
+
+
 
 class createClassCtrl{
 
@@ -52,6 +55,7 @@ class createClassCtrl{
 
 
 createClassCtrl::insertClass( json_decode($_POST['data'], true) );
+
 
 
 

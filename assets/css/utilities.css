@@ -12,10 +12,17 @@
 }
 .bg-ash {
     background-color: #607D8B;
+}.bg-blue {
+    background-color: #1ac6dc;
+}.bg-green {
+    background-color: #44a057;
 }
 /*------------------------------------------------------------------------------
                     Text Colors
 ------------------------------------------------------------------------------*/
+.txt-black {
+    color: #101010;
+}
 .txt-white {
     color: #fff;
 }

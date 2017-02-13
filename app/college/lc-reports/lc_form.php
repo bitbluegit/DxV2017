@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/clg_header.php'; ?>
 
 <!-- ****************************
 **** bonafide enroll filter ****

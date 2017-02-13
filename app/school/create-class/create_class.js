@@ -1,9 +1,4 @@
 
-
- // function createClassResponseHandler(res){
- // 	console.log(res);
- // }
-
 elementById('createClassSubmit').addEventListener('click',function(){
 	var params = {} ,
 	fn = function(){

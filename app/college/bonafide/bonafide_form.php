@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/clg_header.php'; ?>
 
 <!-- ****************************
 **** bonafide enroll filter ****
@@ -46,5 +46,27 @@
 
 
 <script src="../../../assets/js/app.js"></script>
-<script src="bonafide_form.js"></script>
+<!-- <script src="bonafide_form.js"></script> -->
 <!-- <script src="insertBonafide.js"></script> -->
+
+
+<script type="text/javascript">
+	function getStudentDetailForBonafide(){
+		var grNum = elementById('enroll').value.trim();
+		
+		if( grNum =='' || grNum == undefined ){
+			alert('Please Enter Valid Enroll Number ');
+			return false;
+		}
+		
+		var callBackFun = function(res){
+			document.getElementById('bonafide-block').innerHTML = res;
+		};
+
+		AjaxPost('create_bonafideCtrl.php',{enroll:grNum},callBackFun,'txt');
+	}
+
+
+
+	
+</script>

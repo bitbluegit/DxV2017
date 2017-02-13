@@ -23,4 +23,4 @@ foreach ($divArr as $div) {
 	$OptionStr .= sprintf('<option value="%s">%s</option>',$div,$div);
 }
 
-echo $OptionStr;
+ echo $OptionStr;

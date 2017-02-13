@@ -1,5 +1,6 @@
 <?php 
-require_once '../../../helper/db.php';
+require_once '../../../helper/require.php';
+
 
 $enroll=$_POST['enroll'];
 $name=$_POST['Stu_name'];
@@ -7,18 +8,19 @@ $fname=$_POST['fname'];
 $mname=$_POST['mname'];
 $dob=$_POST['dob'];
 $birth_place=$_POST['birth-place'];
-$std=$_POST['standard'];
+$yr=$_POST['year'];
 $religion=$_POST['religion'];
 $purpose=$_POST['purpose'];
-   $id=$_COOKIE['Id'];
+
+$id = $_COOKIE['Id'];
 
 
 
- 	$sql = "INSERT INTO `bonafide` (`unique_id`, `Gr_no`, `sr_no`, `date`, `name`, `FatherName`, `m_name`, `DOB`, `place`, `std`,
- 	 `religion`, `address`, `purpose` )
+ 	$sql = "INSERT INTO `clg_bonafide` (`unique_id`, `Gr_no`, `sr_no`, `date`, `name`, `FatherName`, `m_name`, `DOB`, `place`, `year`,
+ 	 `religion`, `purpose` )
 
-VALUES ('$id', '$enroll', '', now(), '$name', '$fname', '$mname', '$dob', '$birth_place', '$std', '$religion',
- '', '$purpose')" ;
+VALUES ('$id', '$enroll', '', now(), '$name', '$fname', '$mname', '$dob', '$birth_place', '$yr', '$religion',
+ 	 '$purpose')" ;
 
 
 			$affectedRowCount = DB::execute($sql);

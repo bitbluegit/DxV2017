@@ -1,4 +1,5 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php //require_once '../../includes/header.php';
+require_once '../../includes/usr_sch_header.php'; ?>
 
 
 <!-- ****************************
@@ -82,7 +83,7 @@
 		<label for="section" class="font-weight100 small-caps full-width">Section</label>
 		<select id="section" name="section" class="full-width" title="Select Student Section." required>
 			<option value="" disabled selected>Select One</option>
-
+			
 		</select>
 	</div>
 

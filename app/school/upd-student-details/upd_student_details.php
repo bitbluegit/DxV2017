@@ -1,6 +1,6 @@
 <?php 
-
-require_once '../../includes/header.php'; ?>
+require_once '../../includes/usr_sch_header.php';
+//require_once '../../includes/header.php'; ?>
 <!-- 
 /********************
 ** student list filter **

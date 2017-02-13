@@ -8,15 +8,15 @@ $sDate = $reqData['startdate'];
 $eDate = $reqData['enddate'];
 
 $conName  = $reqData['name'] != '' ? " AND BF.`name`='{$reqData['name']}' " : ''; 
-$conStd  = $reqData['standard'] != '' ? " AND BF.`std`='{$reqData['standard']}' " : ''; 
+$conYear  = $reqData['year'] != '' ? " AND BF.`year`='{$reqData['year']}' " : ''; 
 $conEnroll  = $reqData['enroll'] != '' ? " AND BF.`gr_no`='{$reqData['enroll']}' " : ''; 
 $conDate  = ($sDate  != '' &&  $eDate != '') ? " AND BF.`date` BETWEEN '{$sDate}' AND '{$eDate}' " : '';
 
 $sql = " SELECT AD.`name` AS 'user_name' ,BF.`gr_no`, BF.`name` AS 'stu_name' ,
-BF.`FatherName` ,BF.`std` ,  BF.`address`,BF.`purpose`, DATE_FORMAT(BF.`date`,'%d/%m/%Y') AS 'date'
-FROM bonafide BF 
-INNER JOIN admin_sch AD ON AD.`unique_id` = BF.`unique_id`
-WHERE 1=1 {$conName} {$conStd} {$conEnroll} {$conDate} "; 
+BF.`FatherName` ,BF.`year` ,BF.`purpose`, DATE_FORMAT(BF.`date`,'%d/%m/%Y') AS 'date'
+FROM clg_bonafide BF 
+INNER JOIN admin_sch AD ON AD.`unique_id` = BF.`unique_id`	
+WHERE 1=1 {$conName} {$conYear} {$conEnroll} {$conDate} "; 
 
 $data  = DB::allRow($sql);
 if($data){

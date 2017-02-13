@@ -8,13 +8,13 @@ $sDate = $reqData['startdate'];
 $eDate = $reqData['enddate'];
 
 $conName  = $reqData['name'] != '' ? " AND LC.`stu_name`='{$reqData['name']}' " : ''; 
-$conStd  = $reqData['standard'] != '' ? " AND LC.`std_studying`='{$reqData['standard']}' " : ''; 
+$conStd  = $reqData['course'] != '' ? " AND LC.`course_studying`='{$reqData['course']}' " : ''; 
 $conEnroll  = $reqData['enroll'] != '' ? " AND LC.`enroll_no`='{$reqData['enroll']}' " : ''; 
 $conDate  = ($sDate  != '' &&  $eDate != '') ? " AND LC.`created_at` BETWEEN '{$sDate}' AND '{$eDate}' " : '';
 
-$sql = " SELECT LC.`lc_no`, LC.`enroll_no`,LC.`stu_name` ,LC.`std_studying` ,LC.`remark`,
+$sql = " SELECT LC.`lc_no`, LC.`enroll_no`,LC.`stu_name` ,LC.`course_studying` ,LC.`remark`,
 		 DATE_FORMAT(LC.`created_at`,'%d/%m/%Y') AS 'date'
-		FROM sch_lc LC WHERE 1=1 {$conName} {$conStd} {$conEnroll} {$conDate} "; 
+		FROM clg_lc LC WHERE 1=1 {$conName} {$conStd} {$conEnroll} {$conDate} "; 
 
 $data  = DB::allRow($sql);
 if($data){

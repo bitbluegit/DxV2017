@@ -13,14 +13,14 @@ $religion=$_POST['religion'];
 $purpose=$_POST['purpose'];
 
 $id = $_COOKIE['Id'];
+$date= date('Y-m-d');
 
 
+ 	$sql = "INSERT INTO bonafide (unique_id, Gr_no, date, name, FatherName, m_name, DOB, place, std,
+ 	 religion,  purpose )
 
- 	$sql = "INSERT INTO `bonafide` (`unique_id`, `Gr_no`, `sr_no`, `date`, `name`, `FatherName`, `m_name`, `DOB`, `place`, `std`,
- 	 `religion`, `address`, `purpose` )
-
-VALUES ('$id', '$enroll', '', now(), '$name', '$fname', '$mname', '$dob', '$birth_place', '$std', '$religion',
- '', '$purpose')" ;
+VALUES ('{$id}', '{$enroll}','{$date}', '{$name}', '{$fname}', '{$mname}', '{$dob}', '{$birth_place}', '{$std}', '{$religion}',
+  '{$purpose}')" ;
 
 
 			$affectedRowCount = DB::execute($sql);
@@ -42,7 +42,7 @@ VALUES ('$id', '$enroll', '', now(), '$name', '$fname', '$mname', '$dob', '$birt
 
 // class createUserCtrl{
 
-// 	public static $classData = array('enroll' => '1' ,'name' => 'xyz','fname' => 'abc' ,
+// 	public static $classData = array('enroll' => '1' ,'name' => 'xyz}','fname' => 'abc' ,
 // 		'mname' => 'dge', 'std' => 'first','dob' => '08/02/1993','birth_place' => 'yg',
 // 		'religion' => 'ddd', 'purpose' => 'abcdefg');
 // 	// public static $response = array();

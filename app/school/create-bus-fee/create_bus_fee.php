@@ -76,7 +76,8 @@
                             <?php
 
                             //bus fee detail
-                            $sql = "select bus_fee.area_name,bus_fee.bus_fee_amount,bus_fee.bus_lfee_amount,bus_fee.fee_freq,bus_fee.late_fee_freq, bus_fee.created_at,bus_fee.unique_id from bus_fee";
+                            $sql = "select bus_fee.area_name,bus_fee.bus_fee_amount,bus_fee.bus_lfee_amount,bus_fee.fee_freq,bus_fee.late_fee_freq,
+                                date(bus_fee.created_at),bus_fee.unique_id from bus_fee";
 
                                $busFeeArr = DB::allRow($sql);
                             foreach ($busFeeArr as  $fee) {

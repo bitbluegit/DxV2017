@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/clg_header.php'; ?>
 
 <!-- Transaction Filter Form -->
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">
@@ -51,10 +51,12 @@
     </div>
 
     <div class="col m12 l3">
-        <label for="feefreq" class="font-weight100 small-caps full-width">Course Name</label>
-        <select name="feefreq" id="feefreq" class="full-width" title="Select Fee Frequency" required>
+        <label for="cName" class="font-weight100 small-caps full-width">Course Name</label>
+        <select name="cName" id="cName" class="full-width" title="Select Fee Frequency" required>
             <option value="" disabled selected>Select One</option>
-            <option value="per-month">Per Month</option>
+
+
+
         </select>
         <label for="feeformat1" class="font-weight100 small-caps full-width">Fee Format 1</label>
         <select id="feeformat1" class="full-width" title="Select your Fee Format 1." required>
@@ -86,15 +88,14 @@
     <table class="full-width margin-bottom-zero">
         <thead>
             <tr class="txt-ash">
-                <th>Medium</th> <th>Standard</th> <th>Frequency</th> <th>Name</th> <th>Amount</th>
-                <th>Late Fee</th> <th>Fee Format 1</th> <th>Fee Format 2</th> <th>Consession</th>
+                <th>Medium</th> <th>Course</th> <th>Course Name</th> <th>Yera</th> <th>Fee Frequency</th>
+                <th>Fee Name</th> <th>Fee Amount</th> <th>Late Fee Amount </th> 
             </tr>
         </thead>
         <tbody>
             <?php
-                            //created fee details
-            $sql = "select sch_cls_fee.medium , sch_cls_fee.std, sch_cls_fee.one_time, sch_cls_fee.fee_type, sch_cls_fee.fee,sch_cls_fee.lfee,sch_cls_fee.cumpulsory, sch_cls_fee.status,
-            sch_cls_fee.unique_id from Sch_cls_fee";
+             //created fee details
+            $sql = "SELECT CF.`Medium`,CF.`Course`,CF.`CourseName`,CF.`year`,CF.`one_time`,CF.`fee_type`,CF.`fee`,CF.`lfee`,CF.`unique_id` FROM clg_cls_fee CF";
 
             $feeDataArr = DB::allRow($sql);
             foreach ($feeDataArr as  $fee) {
@@ -117,13 +118,45 @@
 <script src="set_class_fee.js"></script>
 
 <script type="text/javascript">
+
+// form submit
+elementById('setClassFeeSubmit').addEventListener('click',function(){
+    
+    var params = {} ,
+    fn = function(){
+        // alert('hello');
+        window.location.reload();
+    };
+    
+    params.mdm = elementById('medium').value;
+    params.crs = elementById('course').value;
+    params.year = elementById('year').value;
+    params.cname =elementById('cName').value;
+    params.feename = elementById('feename').value;
+    params.feeamount = elementById('feeamount').value;
+    params.latefee = elementById('latefee').value;
+    params.feeformat2 = elementById('feeformat1').value;
+    params.feeformat2 = elementById('feeformat2').value;
+
+    // window.alert(params.mdm);
+    // window.alert(params.std);
+
+    AjaxPost('setClassFeeCtrl.php',params,fn,'txt');
+
+});
+
+
+
+
+
+// get course name
      function getCourseName() {
         var mdm = elementByIdValue('medium'),
         crs  = elementByIdValue('course'),
         year = elementByIdValue('year');
 
         var callBackFun = function (res) {
-            elementById('section').innerHTML = res;
+            elementById('cName').innerHTML = res;
         };
 
         AjaxPost('../db/getCoursename.php', { mdm: mdm, crs: crs, year: year }, callBackFun, 'txt');

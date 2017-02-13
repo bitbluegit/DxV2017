@@ -19,7 +19,7 @@ class GetPageTitle{
 		return $title;
 	}
 
-}
+}	
 
 
 GetPageTitle::getTitle($_SERVER['REQUEST_URI']);
@@ -35,6 +35,29 @@ $pageTitleArr =  array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Admission Form'
 		),
+	'addEvent' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Event'
+		),
+	'addExam' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Exams'
+		),
+
+	'addFee' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Student Fee'
+		),
+
+	'AddTimeTable' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Time Table'
+		),
+
+	'AssignTeacher' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Assign Teacher '
+		),
 
 	'bonafide' => array(
 		'icon-class' => 'ion-android-apps',
@@ -47,6 +70,11 @@ $pageTitleArr =  array(
 	'ReprintBonafide' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'RePrint Bonafide'
+		),
+
+	'birthdayList' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Student Birthday List'
 		),
 
 	'create_new_user' => array(
@@ -65,9 +93,36 @@ $pageTitleArr =  array(
 		'js'=>'create_new_class'
 		),
 
+	'dx_green_sheet' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Green Sheet',
+		// 'js'=>'create_new_class'
+		),
+
 	'expenses' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'Expenses'
+		),
+	'expensePrint' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Print Expense'
+		),
+	'expensesReport' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Expense Report'
+		),
+	'exam' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Add Exam'
+		),
+
+	'holiday' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Holidays'
+		),
+	'printExpenses' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => 'Reprint Expenses'
 		),
 
 	'enquiry' => array(
@@ -100,6 +155,21 @@ $pageTitleArr =  array(
 	'PrintLC' => array(
 		'icon-class' => 'ion-android-apps',
 		'title' => 'LC Print'
+		),
+
+	'today_tran' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => "Today's Transaction "
+		),
+
+	'today_exp' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => "Today's Expenses "
+		),
+
+	'admission_revenue' => array(
+		'icon-class' => 'ion-android-apps',
+		'title' => "Admission Revenue "
 		),
 
 	'message_template' => array(

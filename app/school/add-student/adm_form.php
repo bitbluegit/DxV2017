@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php';
+<?php require_once '../../includes/usr_sch_header.php';
 require_once '../../../numToWord.php';
 
 $sql = "SELECT * FROM sch_details ORDER BY Gr_num DESC LIMIT 1";

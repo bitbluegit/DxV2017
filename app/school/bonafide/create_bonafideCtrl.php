@@ -6,7 +6,7 @@ $reqData =  json_decode($_POST['data'],true);
 
 
 $sql = " 
-SELECT US.Gr_num, SC.`name`, US.Std, SC.`f_name`, SC.`m_name`, SC.`DOB`, SC.`birth_place`, SC.`religion` 
+SELECT US.Gr_num, SC.name, US.Std, SC.f_name, SC.m_name, SC.DOB, SC.birth_place, SC.religion 
 FROM user_sch US 
 INNER JOIN sch_details SC ON US.Gr_num = SC.Gr_num 
 WHERE US.Gr_num = '{$reqData['enroll']}' 

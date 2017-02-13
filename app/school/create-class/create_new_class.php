@@ -32,7 +32,7 @@
      <div class="col m12 l4">
       <label for="standard" class="font-weight100 small-caps full-width">Standard</label>
       <select class="full-width" id="standard" name="standard"  title="Select your Standard." required>
-        <option value="" disabled selected>Select One</option>
+        <option value="" disabled selected>Select Standard</option>
         <?php foreach($GLOBALS['STD'] as $std){ echo sprintf("<option value='%s'>%s</option>",$std,$std); } ?>
       </select>
     </div>
@@ -40,7 +40,7 @@
     <!-- Division -->
     <div class="col m12 l4">
       <label for="division" class="font-weight100 small-caps full-width">Division Count</label>
-      <input class="full-width" type="number" id="division" name="division"  placeholder="Enter " title="Enter Divsion Count." required>
+      <input class="full-width" type="number" id="division" value="2" name="division"  placeholder="Enter Divsion Count." title="Enter Divsion Count."  required>
     </div>
 
     <!-- Submit Button -->
@@ -77,79 +77,78 @@
     <table class="full-width margin-bottom-zero">
       <thead>
         <tr class="txt-ash"> <th>User</th> <th>Medium</th> <th>Standard</th> <th>Division</th> <th>Strength</th>
-          <th>Export/Upload</th>
+          <th>Export/Update</th>
         </tr>      
       </thead>
       <tbody id="class-details-tbody">
         <?php 
 
-
-
-
-
       // User Details 
-        $sql = " SELECT admin_sch.type , sch_class.Medium , sch_class.Std , sch_class.no_of_div ,admin_sch.uname, sch_class.unique_id  FROM sch_class INNER JOIN 
-        admin_sch ON sch_class.unique_id=admin_sch.unique_id 
-        ORDER BY FIELD(MEDIUM,'English','Hindi','Marathi'),FIELD(`Std`,'nursery', 'jr.kg','junior.kg','sr.kg',
-        'senior.kg','first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','Mr.Dextro','Left')";
-        $userDataArr = DB::allRow($sql);
-        foreach ($userDataArr as $user){
-         $user_id = array_pop($user);
-         $btn = "<button class='btn btn-red' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-down'></i> </button>";
-
-         echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$user),$btn);
+        $sql = " SELECT AD.Name AS 'user' , SC.Medium AS 'mdm' , SC.Std AS 'std', SC.no_of_div AS 'div count' , COUNT(US.`Gr_num`) AS 'student_count'
+        FROM sch_class SC
+        INNER JOIN admin_sch AD  ON SC.unique_id = AD.unique_id 
+        LEFT JOIN user_sch US ON US.`Medium` =  SC.`Medium` AND US.`Std` = SC.`Std`
+        GROUP BY SC.`Medium` , SC.`Std` 
+        ORDER BY FIELD(SC.`Medium`,'English','Hindi','Marathi'),FIELD(SC.`Std`,'nursery', 'jr.kg','junior.kg','sr.kg',
+        'senior.kg','first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','Mr.Dextro','Left')
+        ";
+        $result = DB::allRow($sql);
+        foreach ($result as $class){
+         $mdm_std =  $class['mdm'].'~'.$class['std'];
+         $btn = "<button class='btn btn-green' onclick='export()'>
+                  <i class='ion-ios-arrow-thin-down'> </i> </button>
+         <button class='btn btn-red' onclick='UpdateClassDivCount({$mdm_std})'><i class='ion-edit'></i> </button>";
+         echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$class),$btn);
        }
        ?>
        
-       <!--  <tr>
-            <td>Admin</td>
-            <td>English</td>
-            <td>1<sup>st</sup></td>
-            <td>31</td>
-            <td>1</td>
-            <td>
-             <button type="submit" class="btn btn-green" title="Add more particular.">
-              <i class="ion-ios-arrow-thin-up"></i>
-            </button>
-            <button type="submit" class="btn btn-red" title="Remove particular.">
-              <i class="ion-ios-arrow-thin-down"></i>
-            </button>
-          </td>
-      </tr>
 
-      <tr>
-        <td>Admin</td>
-        <td>English</td>
-        <td>1<sup>st</sup></td>
-        <td>31</td>
-        <td>1</td>
-        <td>
-         <button type="submit" class="btn btn-green" title="Add more particular.">
-          <i class="ion-ios-arrow-thin-up"></i>
-        </button>
-        <button type="submit" class="btn btn-red" title="Remove particular.">
-          <i class="ion-ios-arrow-thin-down"></i>
-        </button>
-      </td>
-    </tr> -->
-    
+     </tbody>
+   </table>
 
-
-  </tbody>
-</table>
-
-</div> <!-- class Detail table blcok end -->
+ </div> <!-- class Detail table blcok end -->
 </section> <!-- view-class-data-block -->
 
 
 
+
+<!-- FOOTER HERE  -->
+<?php  require_once('../../includes/footer.php') ?>
+
+
 <!-- scripts  -->
-<script src="../../../assets/js/app.js"></script>
-<script src="create_class.js"></script>
 <script type="text/javascript">
-  function updateUser(id)
-  {
-    alert(id);
-  }
-  
+
+
+// Form Submit Event Handler 
+elementById('createClassSubmit').addEventListener('click',function(){
+  var mdm = DX.eByIdVal('medium') ,
+  std = DX.eByIdVal('standard'),
+  div = DX.eByIdVal('division');
+
+  var CallBackFn = function(jsonResponse){
+    alert(jsonResponse.msg);
+    window.location.reload();
+  };
+
+  if( mdm != "" &&  std !="" && parseInt(div) > 0 ){
+    DX.AjaxPost('createClassCtrl.php',{mdm:mdm , std:std, div:div},CallBackFn,'json');
+ }else{
+  alert('Please Select Valid mdm , std, div-count');
+}
+});
+
+
+ function UpdateClassDivCount(srno){
+  alert(srno);
+        var htm = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" ;
+        htm += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" ;
+        htm += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" ;
+        htm += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" ;
+        htm += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" ;
+        modalShow(htm);
+
+}
+
+
 </script>

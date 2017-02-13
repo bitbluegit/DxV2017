@@ -1,6 +1,7 @@
 <?php 
+require_once '../../includes/usr_sch_header.php'; 
 
-require_once '../../includes/header.php'; ?>
+//require_once '../../includes/header.php'; ?>
 <!-- 
 /********************
 ** student list filter **
@@ -85,8 +86,7 @@ require_once '../../includes/header.php'; ?>
 		<tbody id="student-list-body">
 
 			<?php 
-
-     	 // User Details 
+     		// User Details 
 			$sql = " 
 			SELECT US.`Medium`,US.`Std`,US.`Section`,
 			SUM( CASE WHEN SD.`sex` = 'male' THEN 1 ELSE 0 END ) as Boys ,
@@ -106,8 +106,10 @@ require_once '../../includes/header.php'; ?>
 				// $btn = "<button class='btn btn-green' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-up'></i> </button>
 				// <button class='btn btn-red' onclick='updateUser({$user_id})'><i class='ion-ios-arrow-thin-down'></i> </button>";
 
-				echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$user),$btn);
+				echo sprintf("<tr><td>%s</td></tr>",implode('</td><td>',$user));
 			}
+
+
 			?>
 
 		</tbody>
@@ -144,12 +146,6 @@ require_once '../../includes/header.php'; ?>
 
 
 </div> <!-- student data block -->
-
-
-
-
-
-
 
 </div>
 <!-- /Container -->

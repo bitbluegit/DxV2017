@@ -1,4 +1,5 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php //require_once '../../includes/header.php';
+require_once '../../includes/usr_sch_header.php'; ?>
 
 <!-- Transaction Filter Form -->
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">
@@ -55,21 +56,23 @@
                 <th>Title</th>
                 <th>Message</th>
                 <th>Template For</th>
+                <th>Delete</th>
             </tr>
         </thead>
 
         <tbody id="filter-data">
             <?php 
             // User Details 
-            $sql = "SELECT  AD.`name` , MT.`tpl_title` , MT.`tpl_txt` ,MT.`tpl_for`,  MT.`unique_id`
+            $sql = "SELECT  AD.`name` , MT.`tpl_title` , MT.`tpl_txt` ,MT.`tpl_for`,  MT.`tpl_id`
             FROM msg_template MT INNER JOIN admin_sch AD ON AD.`unique_id` = MT.`unique_id`";
-            $userDataArr = DB::allRow($sql);
-            foreach ($userDataArr as $user){
-                $user_id = array_pop($user);
+            $result = DB::allRow($sql);
+            foreach ($result as $row) {
+              $tpl_id = array_pop($row);
 
-                echo sprintf("<tr><td>%s</td></tr>",implode('</td><td>',$user),$btn);
-            }
-            ?>
+              $btn = "<button class='btn btn-red' onclick='deleteTmp({$tpl_id})'><i class='ion-trash-b'></i> </button>";
+              echo sprintf("<tr><td>%s</td><td>%s</td></tr>",implode('</td><td>',$row),$btn);
+          }
+          ?>
 
            <!--  <tr>                               
                 <td>Admin</td>
@@ -77,11 +80,11 @@
                 <td>On Every Suturday There Will Be Half Day School Will Leave On 10:30 AM</td>
                 <td>School</td>                               
             </tr> -->
-           
+
         </tbody>
     </table>
 </div>
-    
+
 
 
 </div>
@@ -89,3 +92,23 @@
 
 <script src="../../../assets/js/app.js"></script>
 <script src="message_template.js"></script>
+
+<script type="text/javascript">
+   function deleteTmp(tpl_id){
+
+    var ok = confirm("Are You Sure To Delete?")
+    if (ok)   {     
+
+        var params = {} ,
+        fn = function(){
+              alert('Template Delete');
+         }; 
+
+         params.tpl_id = tpl_id;
+
+         AjaxPost('deleteMsgTmp.php',params,fn,'txt');
+
+         window.location.href= "message_template.php";
+     };
+ }
+</script>

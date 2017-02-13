@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../../includes/header.php'; ?>
+require_once '../../includes/clg_header.php'; ?>
 <!-- 
 /********************
 ** student list filter **

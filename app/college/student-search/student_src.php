@@ -1,4 +1,4 @@
-<?php require_once '../../includes/header.php'; ?>
+<?php require_once '../../includes/clg_header.php'; ?>
 
 <!-- student Filter Form -->
 <div class="bg-white overflow-x box-shadow margin-bottom30  ">
